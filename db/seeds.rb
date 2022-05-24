@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+print "Cleaning up db..."
 Visit.destroy_all
 Restaurant.destroy_all
 User.destroy_all
+puts "Done."
+print "Seeding users..."
 
 # users
 user_one = User.create!(
@@ -19,6 +21,7 @@ user_one = User.create!(
   }
 )
 
+print "Seeding restaurants..."
 # Restaurants
 restaurant_one = Restaurant.new(
   {
@@ -134,6 +137,9 @@ restaurant_six = Restaurant.new(
 # restaurant_six.photo.attach(io: File.open('app/assets/images/foiegwa.png'), filename: 'foiegwa.png')
 restaurant_six.save!
 
+puts "Done."
+print "Seeding visits..."
+
 # Visits
 visit_one = Visit.new(
   {
@@ -179,3 +185,4 @@ visit_four = Visit.new(
 visit_four.user = user_one
 visit_four.restaurant = restaurant_two
 visit_four.save!
+puts "Done."
