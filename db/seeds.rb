@@ -170,3 +170,12 @@ visit_three = Visit.new(
 visit_three.user = user_one
 visit_three.restaurant = restaurant_four
 visit_three.save!
+
+visit_four = Visit.new(
+  {
+    date: Date.today
+  }
+)
+visit_four.user = user_one
+visit_four.restaurant = restaurant_two
+visit_four.save!
