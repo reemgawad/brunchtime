@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :restaurants, only: %i[index show] do
-    resources :visits, only: %i[create update]
+    resources :visits, only: %i[create]
   end
+  resources :visits, only: %i[edit update]
 end
