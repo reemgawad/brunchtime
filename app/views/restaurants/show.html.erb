@@ -1,5 +1,7 @@
 <h1><%= @restaurant.name%></h1>
 
+<%= image_tag @restaurant.photo if @restaurant.photo.attached? %>
+
 <p><strong>Address:</strong> <%= @restaurant.address %></p>
 <p><strong>Wait-time:</strong> <%= @restaurant.wait_time %></p>
 <p><strong>Description:</strong> <%= @restaurant.description %></p>
