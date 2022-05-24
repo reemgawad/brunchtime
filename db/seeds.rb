@@ -29,7 +29,13 @@ restaurant_one = Restaurant.new(
     address: "2613 Notre-Dame St W, Montreal, Quebec H3J 1N9",
     description: "Straightforward eatery serving health-conscious brunch, smoothies & cocktails, plus vegan options.",
     price_range: "$$",
-    opening_hours: "9am-4pm",
+    opening_hours: "Monday: 9am-4pm,
+    Tuesday: 9am-4pm,
+    Wednesday: 9am-4pm,
+    Thursday: 9am-4pm,
+    Friday: 9am-4pm,
+    Saturday: 9am-4pm,
+    Sunday: 9am-4pm",
     phone_number: "514-379-6455",
     wait_time: "15 min"
 
@@ -44,13 +50,13 @@ restaurant_two = Restaurant.new(
     address: "2745 Notre-Dame St W, Montreal, Quebec H3J 1N9",
     description: "Creative egg dishes, crêpes & French toast in a trendy space with art on the walls.",
     price_range: "$$",
-    opening_hours: "Tuesday	7am-2pm
-    Wednesday	7am-2pm
-    Thursday	7am-2:30pm
-    Friday	7am-2:30pm
-    Saturday	8am-2:45pm
-    Sunday	8am-2:45pm
-    Monday	7:30am-2:30pm",
+    opening_hours: "Monday: 7:30am-2:30pm,
+    Tuesday:	7am-2pm,
+    Wednesday:	7am-2pm,
+    Thursday:	7am-2:30pm,
+    Friday:	7am-2:30pm,
+    Saturday:	8am-2:45pm,
+    Sunday:	8am-2:45pm",
     phone_number: "514-931-3999",
     wait_time: "10 min"
 
@@ -65,7 +71,13 @@ restaurant_three = Restaurant.new(
     address: "2745 Notre-Dame St W, Montreal, Quebec H3J 1N9",
     description: "Buzzy locale with graffiti-scrawled walls known for its imaginative brunch plates & huge smoothies.",
     price_range: "$$",
-    opening_hours: "8am-4pm",
+    opening_hours: "Monday 8am-4pm,
+    Tuesday: 8am-4pm,
+    Wednesday: 8am-4pm,
+    Thursday: 8am-4pm,
+    Friday: 8am-4pm,
+    Saturday: 8am-4pm,
+    Sunday: 8am-4pm",
     phone_number: "438-387-3668",
     wait_time: "15 min"
 
@@ -80,13 +92,13 @@ restaurant_four = Restaurant.new(
     address: "4621 Notre-Dame St W, Montreal, Quebec H4C 1S5",
     description: "Traditional Jewish deli serving breakfast & sandwiches in a bright, stylish space.",
     price_range: "$$",
-    opening_hours: "Tuesday	Closed
-    Wednesday	9am-3pm
-    Thursday	9am-3pm
-    Friday	9am-3pm
-    Saturday	9am-4pm
-    Sunday	9aam-4pm
-    Monday	9am-3pm",
+    opening_hours: "Monday: 9am-3pm,
+    Tuesday:	Closed,
+    Wednesday:	9am-3pm,
+    Thursday:	9am-3pm,
+    Friday:	9am-3pm,
+    Saturday:	9am-4pm,
+    Sunday:	9aam-4pm",
     phone_number: "514-757-5190",
     wait_time: "20 min"
 
@@ -101,13 +113,13 @@ restaurant_five = Restaurant.new(
     address: "3001 Notre-Dame St W, Montreal, Quebec H4C 1N9",
     description: "Stylish, contemporary haunt serving gourmet regional fare & brunch, plus cocktails & milkshakes.",
     price_range: "$$$",
-    opening_hours: "Tuesday	6pm-11pm
-    Wednesday	6pm-11pm
-    Thursday	6pm-11:30pm
-    Friday	10am-2:30pm, 6pm-11:30pm
-    Saturday	9:30am-3pm, 6pm-11:45pm
-    Sunday	9:30am-3pm, 6pm-11pm
-    Monday	6pm-11pm",
+    opening_hours: "Monday: 6pm-11pm,
+    Tuesday: 6pm-11pm,
+    Wednesday: 6pm-11pm,
+    Thursday:	6pm-11:30pm,
+    Friday:	10am-2:30pm  6pm-11:30pm,
+    Saturday:	9:30am-3pm 6pm-11:45pm,
+    Sunday:	9:30am-3pm  6pm-11pm",
     phone_number: "438-387-4252",
     wait_time: "30 min"
 
@@ -122,13 +134,13 @@ restaurant_six = Restaurant.new(
     address: "1524 RUE NOTRE-DAME OUEST, MONTREAL, QC",
     description: "Classic, rustic charming place serving baked goods, brunch and hot beverages,",
     price_range: "$$",
-    opening_hours: "Tuesday	8am-4pm
-    Wednesday	8am-4pm
-    Thursday	8am-4pm
-    Friday	8am-4pm
-    Saturday	9am-4pm
-    Sunday	9am-4pm
-    Monday	8am-4pm",
+    opening_hours: "Monday: 8am-4pm,
+    Tuesday:	8am-4pm,
+    Wednesday:	8am-4pm,
+    Thursday:	8am-4pm,
+    Friday:	8am-4pm,
+    Saturday:	9am-4pm,
+    Sunday:	9am-4pm",
     phone_number: "514-933-1412",
     wait_time: "20 min"
 
@@ -144,7 +156,7 @@ print "Seeding visits..."
 visit_one = Visit.new(
   {
     date: Date.today,
-    feedback: "Waited 12 min. Wait-time accurate.",
+    feedback: "Waited 12 min. Wait-time close to accurate.",
     rating: 4,
     arrived: true
   }
@@ -186,3 +198,27 @@ visit_four.user = user_one
 visit_four.restaurant = restaurant_two
 visit_four.save!
 puts "Done."
+
+visit_five = Visit.new(
+  {
+    date: Date.today,
+    feedback: "Waited 25 min instead of 30 min.",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_five.user = user_one
+visit_five.restaurant = restaurant_five
+visit_five.save!
+
+visit_six = Visit.new(
+  {
+    date: Date.today,
+    feedback: "Waited exactly 20 min!",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_six.user = user_one
+visit_six.restaurant = restaurant_six
+visit_six.save!
