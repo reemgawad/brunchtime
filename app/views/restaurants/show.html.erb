@@ -11,11 +11,13 @@
 
 <h2>Feedback from Brunchers</h2>
 <p><% @visits.each do |visit| %></p>
+<% if !visit.rating.nil? %>
 
 <p><strong>Accuracy Rating:</strong> <%= visit.rating %></p>
 <p><strong>Comment:</strong> <%= visit.feedback %></p>
 
 <p><strong>Date Visited:</strong> <%= visit.date %></p>
+<% end %>
 <% end %>
 
 <%= link_to 'Back to list', restaurants_path %>
