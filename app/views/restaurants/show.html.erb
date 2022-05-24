@@ -13,11 +13,12 @@
 <p><% @visits.each do |visit| %></p>
 <% if !visit.rating.nil? %>
 
-<p><strong>Accuracy Rating:</strong> <%= visit.rating %></p>
-<p><strong>Comment:</strong> <%= visit.feedback %></p>
+    <p><strong>Accuracy Rating:</strong> <%= visit.rating %></p>
+    <p><strong>Comment:</strong> <%= visit.feedback %></p>
 
-<p><strong>Date Visited:</strong> <%= visit.date %></p>
-<% end %>
+    <p><strong>Date Visited:</strong> <%= visit.date %></p>
+    <%= link_to "Edit", edit_visit_path(visit)%>
+  <% end %>
 <% end %>
 
 <%= simple_form_for [ @restaurant, @visit ] do |f| %>

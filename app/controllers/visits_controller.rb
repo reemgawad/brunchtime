@@ -13,6 +13,23 @@ class VisitsController < ApplicationController
     end
   end
 
+  def update
+    @visit = Visit.find(params[:id])
+    @visit.arrived = true
+    @visit.update(visit_params)
+    @restaurant = @visit.restaurant
+
+    if @visit.update(visit_params)
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @visit = Visit.find(params[:id])
+  end
+
   private
 
   def visit_params
