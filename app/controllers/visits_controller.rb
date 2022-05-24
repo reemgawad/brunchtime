@@ -7,7 +7,7 @@ class VisitsController < ApplicationController
     @visit.date = Date.today
 
     if @visit.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to edit_visit_path(@visit)
     else
       render 'restaurants/show'
     end
