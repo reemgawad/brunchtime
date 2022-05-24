@@ -1,11 +1,20 @@
 <h1><%= @restaurant.name%></h1>
 
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.wait_time %></p>
-<p><%= @restaurant.description %></p>
-<p><%= @restaurant.price_range %></p>
-<p><%= @restaurant.opening_hours %></p>
-<p><%= @restaurant.phone_number %></p>
+<p><strong>Address:</strong> <%= @restaurant.address %></p>
+<p><strong>Wait-time:</strong> <%= @restaurant.wait_time %></p>
+<p><strong>Description:</strong> <%= @restaurant.description %></p>
+<p><strong>Price Range:</strong> <%= @restaurant.price_range %></p>
+<p><strong>Opening Hours:</strong> <%= @restaurant.opening_hours %></p>
+<p><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
+
+<h2>Feedback from Brunchers</h2>
+<p><% @visits.each do |visit| %></p>
+
+<p><strong>Accuracy Rating:</strong> <%= visit.rating %></p>
+<p><strong>Comment:</strong> <%= visit.feedback %></p>
+
+<p><strong>Date Visited:</strong> <%= visit.date %></p>
+<% end %>
 
 <%= simple_form_for [ @restaurant, @visit ] do |f| %>
   <%= f.submit "Take me there", class: "btn btn-primary" %>
