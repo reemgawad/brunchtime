@@ -41,7 +41,7 @@ restaurant_one = Restaurant.new(
 
   }
 )
-# restaurant_one.photo.attach(io: File.open('app/assets/images/barley.png'), filename: 'barley.png')
+restaurant_one.photo.attach(io: File.open('app/assets/images/barley.png'), filename: 'barley.png')
 restaurant_one.save!
 
 restaurant_two = Restaurant.new(
@@ -62,7 +62,7 @@ restaurant_two = Restaurant.new(
 
   }
 )
-# restaurant_two.photo.attach(io: File.open('app/assets/images/neuf.png'), filename: 'neuf.png')
+restaurant_two.photo.attach(io: File.open('app/assets/images/neuf.png'), filename: 'neuf.png')
 restaurant_two.save!
 
 restaurant_three = Restaurant.new(
@@ -83,7 +83,7 @@ restaurant_three = Restaurant.new(
 
   }
 )
-# restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.png'), filename: 'avenue.png')
+restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.png'), filename: 'avenue.png')
 restaurant_three.save!
 
 restaurant_four = Restaurant.new(
@@ -104,7 +104,7 @@ restaurant_four = Restaurant.new(
 
   }
 )
-# restaurant_four.photo.attach(io: File.open('app/assets/images/arthurs.png'), filename: 'arthurs.png')
+restaurant_four.photo.attach(io: File.open('app/assets/images/arthurs.png'), filename: 'arthurs.png')
 restaurant_four.save!
 
 restaurant_five = Restaurant.new(
@@ -125,7 +125,7 @@ restaurant_five = Restaurant.new(
 
   }
 )
-# restaurant_five.photo.attach(io: File.open('app/assets/images/foiegwa.png'), filename: 'foiegwa.png')
+restaurant_five.photo.attach(io: File.open('app/assets/images/foiegwa.png'), filename: 'foiegwa.png')
 restaurant_five.save!
 
 restaurant_six = Restaurant.new(
@@ -146,7 +146,7 @@ restaurant_six = Restaurant.new(
 
   }
 )
-# restaurant_six.photo.attach(io: File.open('app/assets/images/foiegwa.png'), filename: 'foiegwa.png')
+restaurant_six.photo.attach(io: File.open('app/assets/images/maman.jpeg'), filename: 'maman.jpeg')
 restaurant_six.save!
 
 puts "Done."
