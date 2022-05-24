@@ -16,4 +16,8 @@
 <p><strong>Date Visited:</strong> <%= visit.date %></p>
 <% end %>
 
+<%= simple_form_for [ @restaurant, @visit ] do |f| %>
+  <%= f.submit "Take me there", class: "btn btn-primary" %>
+<% end %>
+
 <%= link_to 'Back to list', restaurants_path %>
