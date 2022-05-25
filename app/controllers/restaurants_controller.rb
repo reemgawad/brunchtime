@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @visit = Visit.new
-    @visits = @restaurant.visits.where.not(rating: nil).order(created_at: :desc)
+    @visits = @restaurant.visits
+
   end
 end

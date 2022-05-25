@@ -1,7 +1,7 @@
 <p>Visits edit</p>
 
 <%= simple_form_for @visit do |f| %>
-  <%= f.input :rating, as: :select, collection: 1..5, include_blank: false %>
+  <%= f.input :rating %>
   <%= f.input :feedback %>
   <%= f.submit "Submit" %>
 <% end %>
