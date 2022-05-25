@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :restaurants, only: %i[index show] do
     resources :visits, only: %i[create]
   end
-  resources :visits, only: %i[edit update]
+  resources :visits, only: %i[show edit update]
 end

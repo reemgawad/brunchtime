@@ -26,6 +26,7 @@ print "Seeding restaurants..."
 restaurant_one = Restaurant.new(
   {
     name: "Barley",
+    # address: "16 Villa Gaudelet, Paris",
     address: "2613 Notre-Dame St W, Montreal, Quebec H3J 1N9",
     description: "Straightforward eatery serving health-conscious brunch, smoothies & cocktails, plus vegan options.",
     price_range: "$$",

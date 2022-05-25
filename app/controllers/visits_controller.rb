@@ -7,7 +7,7 @@ class VisitsController < ApplicationController
     @visit.date = Date.today
 
     if @visit.save
-      redirect_to edit_visit_path(@visit)
+      redirect_to visit_path(@visit)
     else
       render 'restaurants/show'
     end
@@ -28,6 +28,15 @@ class VisitsController < ApplicationController
 
   def edit
     @visit = Visit.find(params[:id])
+  end
+
+  def show
+    @visit = Visit.find(params[:id])
+    @restaurant = @visit.restaurant
+    @marker = {
+      lat: @restaurant.latitude,
+      lng: @restaurant.longitude
+    }
   end
 
   private
