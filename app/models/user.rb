@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_many :visits
+  acts_as_favoritor
 end
