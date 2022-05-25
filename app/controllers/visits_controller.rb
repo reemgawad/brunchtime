@@ -43,6 +43,7 @@ class VisitsController < ApplicationController
   def arrived!
     @visit = Visit.find(params[:visit_id])
     @visit.arrived = true
+    @visit.save
 
     redirect_to edit_visit_path(@visit)
   end
