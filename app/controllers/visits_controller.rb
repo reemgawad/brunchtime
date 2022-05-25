@@ -30,6 +30,13 @@ class VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
   end
 
+  def destroy
+    @visit = Visit.find(params[:id])
+    @visit.destroy
+
+    redirect_to restaurants_path
+  end
+
   def my_past_brunches
     @visits = current_user.visits.order(created_at: :desc)
   end

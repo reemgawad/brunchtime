@@ -17,6 +17,8 @@
       <div class="modal-footer d-flex justify-content-center">
         <button type="button" class="btn btn-primary">Yes</button>
         <button type="button" class="btn btn-primary">No</button>
+        <%# <button type="button" class="btn btn-primary">I'm not going</button> %>
+        <%= link_to "I'm not going", visit_path(@visit), method: :delete %>
       </div>
     </div>
   </div>

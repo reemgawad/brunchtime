@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       post 'toggle_favorite', to: 'restaurants#toggle_favorite'
     end
   end
-  resources :visits, only: %i[edit update]
+  resources :visits, only: %i[edit update destroy]
 
   get 'my_past_brunches', to: 'visits#my_past_brunches'
   get 'my_favorites', to: 'restaurants#my_favorites'
