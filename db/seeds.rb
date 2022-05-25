@@ -170,6 +170,27 @@ restaurant_seven = Restaurant.new(
 restaurant_seven.photo.attach(io: File.open('app/assets/images/passe.jpeg'), filename: 'passe.jpeg')
 restaurant_seven.save!
 
+restaurant_eight = Restaurant.new(
+  {
+    name: "Ginko Café & Bar",
+    address: "308 RUE STE-CATHERINE EST, MONTREAL",
+    description: "Popular brunch spot serving eclectic Canadian fare in a chic, open room with lots of natural light.",
+    price_range: "$$",
+    opening_hours: "Monday: 7am-9pm,
+    Tuesday:	7am-10pm,
+    Wednesday:	7am-10pm,
+    Thursday:	7am-10pm,
+    Friday:	7am-10pm,
+    Saturday:	8am-3pm,
+    Sunday:	8am-3pm",
+    phone_number: "514-379-4449",
+    wait_time: "10 min"
+
+  }
+)
+restaurant_eight.photo.attach(io: File.open('app/assets/images/ginko.jpeg'), filename: 'ginko.jpeg')
+restaurant_eight.save!
+
 puts "Done."
 print "Seeding visits..."
 
