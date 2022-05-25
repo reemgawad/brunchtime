@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -19,10 +19,9 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <p class="welcome-msg">Welcome <%= current_user.first_name %>!</p>
               <%= link_to "Restaurants", restaurants_path, class: "dropdown-item" %>
+              <%= link_to "Favorites", my_favorites_path, class: "dropdown-item" %>
               <%# Line below leads to index for now, path to be changed when new routes available%>
-              <%= link_to "Brunching Favourites", restaurants_path, class: "dropdown-item" %>
-              <%# Line below leads to index for now, path to be changed when new routes available%>
-              <%= link_to "My Past Brunching", restaurants_path, class: "dropdown-item" %>
+              <%= link_to "Brunching History", restaurants_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
