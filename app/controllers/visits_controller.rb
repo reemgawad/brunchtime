@@ -46,6 +46,10 @@ class VisitsController < ApplicationController
     redirect_to edit_visit_path(@visit)
   end
 
+  def my_past_brunches
+    @visits = current_user.visits.order(created_at: :desc)
+  end
+
   private
 
   def visit_params
