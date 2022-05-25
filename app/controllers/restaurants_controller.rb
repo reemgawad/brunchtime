@@ -3,6 +3,8 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
+    # Keep line below: will have to come back to it with the map
+    # @restaurants.order(wait_time: :asc)
   end
 
   def show
