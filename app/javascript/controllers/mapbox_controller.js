@@ -4,10 +4,12 @@ import mapboxgl from "mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
+
     markers: Array
   }
 
   connect() {
+
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -15,6 +17,7 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
     this.#addMarkersToMap()
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }
@@ -45,4 +48,5 @@ export default class extends Controller {
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
+
 }

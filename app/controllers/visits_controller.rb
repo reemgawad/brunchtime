@@ -7,7 +7,7 @@ class VisitsController < ApplicationController
     @visit.date = Date.today
 
     if @visit.save
-      redirect_to edit_visit_path(@visit)
+      redirect_to visit_path(@visit)
     else
       render 'restaurants/show'
     end
@@ -30,11 +30,29 @@ class VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
   end
 
+  def show
+    @visit = Visit.find(params[:id])
+    @restaurant = @visit.restaurant
+    @marker = {
+      lat: @restaurant.latitude,
+      lng: @restaurant.longitude,
+      image_url: helpers.asset_url("beer.png")
+    }
+  end
+
   def destroy
     @visit = Visit.find(params[:id])
     @visit.destroy
 
     redirect_to restaurants_path
+  end
+
+  def arrived!
+    @visit = Visit.find(params[:visit_id])
+    @visit.arrived = true
+    @visit.save
+
+    redirect_to edit_visit_path(@visit)
   end
 
   def my_past_brunches
