@@ -6,8 +6,9 @@ export default class extends Controller {
     apiKey: String,
     marker: Object
   }
+
   connect() {
-    console.log(this.markerValues);
+    console.log(this.markerValue);
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -15,11 +16,26 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
     this.#addMarkersToMap()
+    this.#fitMapToMarkers()
   }
 
   #addMarkersToMap() {
-      new mapboxgl.Marker()
+
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${this.markerValue.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "25px"
+      customMarker.style.height = "25px"
+
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
         .addTo(this.map)
     };
+
+  #fitMapToMarkers() {
+      const bounds = new mapboxgl.LngLatBounds()
+    bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
 }

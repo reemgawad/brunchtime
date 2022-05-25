@@ -35,7 +35,8 @@ class VisitsController < ApplicationController
     @restaurant = @visit.restaurant
     @marker = {
       lat: @restaurant.latitude,
-      lng: @restaurant.longitude
+      lng: @restaurant.longitude,
+      image_url: helpers.asset_url("beer.png")
     }
   end
 
