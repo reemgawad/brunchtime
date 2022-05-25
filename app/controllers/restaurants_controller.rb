@@ -17,6 +17,6 @@ class RestaurantsController < ApplicationController
   end
 
   def my_favorites
-    @favorites = current_user.all_favorites
+    @favorites = current_user.all_favorited
   end
 end
