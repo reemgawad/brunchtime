@@ -19,7 +19,9 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <p class="welcome-msg">Welcome <%= current_user.first_name %>!</p>
               <%= link_to "Restaurants", restaurants_path, class: "dropdown-item" %>
-              <%= link_to "Favorite Brunches", my_favorites_path, class: "dropdown-item" %>
+              <%= link_to "Favorites", my_favorites_path, class: "dropdown-item" %>
+              <%# Line below leads to index for now, path to be changed when new routes available%>
+              <%= link_to "Brunching History", restaurants_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
