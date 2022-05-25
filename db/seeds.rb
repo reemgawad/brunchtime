@@ -26,7 +26,7 @@ print "Seeding restaurants..."
 restaurant_one = Restaurant.new(
   {
     name: "Barley",
-    address: "2613 Notre-Dame St W, Montreal, Quebec H3J 1N9",
+    address: "2613 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Straightforward eatery serving health-conscious brunch, smoothies & cocktails, plus vegan options.",
     price_range: "$$",
     opening_hours: "Monday: 9am-4pm,
@@ -47,7 +47,7 @@ restaurant_one.save!
 restaurant_two = Restaurant.new(
   {
     name: "Resto-Café Quoi De N'Oeuf",
-    address: "2745 Notre-Dame St W, Montreal, Quebec H3J 1N9",
+    address: "2745 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Creative egg dishes, crêpes & French toast in a trendy space with art on the walls.",
     price_range: "$$",
     opening_hours: "Monday: 7:30am-2:30pm,
@@ -68,7 +68,7 @@ restaurant_two.save!
 restaurant_three = Restaurant.new(
   {
     name: "Restaurant L'Avenue",
-    address: "2745 Notre-Dame St W, Montreal, Quebec H3J 1N9",
+    address: "3612 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Buzzy locale with graffiti-scrawled walls known for its imaginative brunch plates & huge smoothies.",
     price_range: "$$",
     opening_hours: "Monday 8am-4pm,
@@ -79,7 +79,7 @@ restaurant_three = Restaurant.new(
     Saturday: 8am-4pm,
     Sunday: 8am-4pm",
     phone_number: "438-387-3668",
-    wait_time: "15 min"
+    wait_time: "45 min"
 
   }
 )
@@ -89,7 +89,7 @@ restaurant_three.save!
 restaurant_four = Restaurant.new(
   {
     name: "Arthurs Nosh Bar",
-    address: "4621 Notre-Dame St W, Montreal, Quebec H4C 1S5",
+    address: "4621 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Traditional Jewish deli serving breakfast & sandwiches in a bright, stylish space.",
     price_range: "$$",
     opening_hours: "Monday: 9am-3pm,
@@ -110,7 +110,7 @@ restaurant_four.save!
 restaurant_five = Restaurant.new(
   {
     name: "Foiegwa",
-    address: "3001 Notre-Dame St W, Montreal, Quebec H4C 1N9",
+    address: "3001 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Stylish, contemporary haunt serving gourmet regional fare & brunch, plus cocktails & milkshakes.",
     price_range: "$$$",
     opening_hours: "Monday: 6pm-11pm,
@@ -180,7 +180,7 @@ visit_two.save!
 visit_three = Visit.new(
   {
     date: Date.today,
-    feedback: "Waited longer than expected. 40 min instead of 20",
+    feedback: "Long as always but wait time accurate.",
     rating: 2,
     arrived: true
   }

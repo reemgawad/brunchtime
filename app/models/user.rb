@@ -9,4 +9,5 @@ class User < ApplicationRecord
 
   has_many :visits
   has_many :past_brunches, through: :visits, source: :restaurant
+  acts_as_favoritor
 end
