@@ -1,7 +1,10 @@
 <h1>All restaurants</h1>
 
 <% @restaurants.each do |restaurant| %>
-<h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-<%= restaurant.address %>
-<%= restaurant.wait_time %>
+  <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+  <%= restaurant.address %>
+  <%= restaurant.wait_time %>
+  <div>
+    <%= link_to "like", toggle_favorite_restaurant_path(restaurant), remote: true, method: :post %>
+  </div>
 <%end %>
