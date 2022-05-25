@@ -31,7 +31,7 @@ class VisitsController < ApplicationController
   end
 
   def my_past_brunches
-    @past_brunches = current_user.past_brunches
+    @visits = current_user.visits.order(created_at: :desc)
   end
 
   private
