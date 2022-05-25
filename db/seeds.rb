@@ -41,7 +41,7 @@ restaurant_one = Restaurant.new(
 
   }
 )
-restaurant_one.photo.attach(io: File.open('app/assets/images/barley.png'), filename: 'barley.png')
+restaurant_one.photo.attach(io: File.open('app/assets/images/barley.jpeg'), filename: 'barley.jpeg')
 restaurant_one.save!
 
 restaurant_two = Restaurant.new(
@@ -62,7 +62,7 @@ restaurant_two = Restaurant.new(
 
   }
 )
-restaurant_two.photo.attach(io: File.open('app/assets/images/neuf.png'), filename: 'neuf.png')
+restaurant_two.photo.attach(io: File.open('app/assets/images/neuf.jpeg'), filename: 'neuf.jpeg')
 restaurant_two.save!
 
 restaurant_three = Restaurant.new(
@@ -71,19 +71,19 @@ restaurant_three = Restaurant.new(
     address: "3612 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Buzzy locale with graffiti-scrawled walls known for its imaginative brunch plates & huge smoothies.",
     price_range: "$$",
-    opening_hours: "Monday 8am-4pm,
-    Tuesday: 8am-4pm,
-    Wednesday: 8am-4pm,
-    Thursday: 8am-4pm,
-    Friday: 8am-4pm,
-    Saturday: 8am-4pm,
-    Sunday: 8am-4pm",
-    phone_number: "438-387-3668",
-    wait_time: "45 min"
+    opening_hours: "Monday 9am-2:30pm,
+    Tuesday: Closed,
+    Wednesday: 9am-2:30pm,
+    Thursday: 9am-2:30pm,
+    Friday: 9am-2:30pm,
+    Saturday: 9am-2:30pm,
+    Sunday: 9am-2:30pm",
+    phone_number: "514-524-6663",
+    wait_time: "15 min"
 
   }
 )
-restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.png'), filename: 'avenue.png')
+restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.jpeg'), filename: 'avenue.jpeg')
 restaurant_three.save!
 
 restaurant_four = Restaurant.new(
@@ -104,7 +104,7 @@ restaurant_four = Restaurant.new(
 
   }
 )
-restaurant_four.photo.attach(io: File.open('app/assets/images/arthurs.png'), filename: 'arthurs.png')
+restaurant_four.photo.attach(io: File.open('app/assets/images/arthurs.jpeg'), filename: 'arthurs.jpeg')
 restaurant_four.save!
 
 restaurant_five = Restaurant.new(
@@ -125,14 +125,14 @@ restaurant_five = Restaurant.new(
 
   }
 )
-restaurant_five.photo.attach(io: File.open('app/assets/images/foiegwa.png'), filename: 'foiegwa.png')
+restaurant_five.photo.attach(io: File.open('app/assets/images/foiegwa.jpeg'), filename: 'foiegwa.jpeg')
 restaurant_five.save!
 
 restaurant_six = Restaurant.new(
   {
     name: "Maman",
     address: "1524 RUE NOTRE-DAME OUEST, MONTREAL, QC",
-    description: "Classic, rustic charming place serving baked goods, brunch and hot beverages,",
+    description: "Classic, rustic charming place serving baked goods, brunch and hot beverages.",
     price_range: "$$",
     opening_hours: "Monday: 8am-4pm,
     Tuesday:	8am-4pm,
@@ -146,8 +146,50 @@ restaurant_six = Restaurant.new(
 
   }
 )
-restaurant_six.photo.attach(io: File.open('app/assets/images/maman.jpeg'), filename: 'maman.jpeg')
+restaurant_six.photo.attach(io: File.open('app/assets/images/maman.png'), filename: 'maman.png')
 restaurant_six.save!
+
+restaurant_seven = Restaurant.new(
+  {
+    name: "Le Passé Composé",
+    address: "1310 BOUL DE MAISONNEUVE EST, MONTREAL",
+    description: "Petite corner bistro for French brunch featuring refined seasonal egg dishes, crêpes & sandwiches.",
+    price_range: "$$$",
+    opening_hours: "Monday: 9am-2:30pm,
+    Tuesday:	9am-2:30pm,
+    Wednesday:	9am-2:30pm,
+    Thursday:	9am-2:30pm,
+    Friday:	9am-2:30pm,
+    Saturday:	9am-4pm,
+    Sunday:	9am-4pm",
+    phone_number: "514-933-1412",
+    wait_time: "30 min"
+
+  }
+)
+restaurant_seven.photo.attach(io: File.open('app/assets/images/passe.jpeg'), filename: 'passe.jpeg')
+restaurant_seven.save!
+
+restaurant_eight = Restaurant.new(
+  {
+    name: "Ginko Café & Bar",
+    address: "308 RUE STE-CATHERINE EST, MONTREAL",
+    description: "Popular brunch spot serving eclectic Canadian fare in a chic, open room with lots of natural light.",
+    price_range: "$$",
+    opening_hours: "Monday: 7am-9pm,
+    Tuesday:	7am-10pm,
+    Wednesday:	7am-10pm,
+    Thursday:	7am-10pm,
+    Friday:	7am-10pm,
+    Saturday:	8am-3pm,
+    Sunday:	8am-3pm",
+    phone_number: "514-379-4449",
+    wait_time: "10 min"
+
+  }
+)
+restaurant_eight.photo.attach(io: File.open('app/assets/images/ginko.jpeg'), filename: 'ginko.jpeg')
+restaurant_eight.save!
 
 puts "Done."
 print "Seeding visits..."
