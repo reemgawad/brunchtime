@@ -30,6 +30,10 @@ class VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
   end
 
+  def my_past_brunches
+    @visits = current_user.visits.order(created_at: :desc)
+  end
+
   private
 
   def visit_params
