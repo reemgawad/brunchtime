@@ -39,6 +39,13 @@ class VisitsController < ApplicationController
     }
   end
 
+  def arrived!
+    @visit = Visit.find(params[:visit_id])
+    @visit.arrived = true
+
+    redirect_to edit_visit_path(@visit)
+  end
+
   private
 
   def visit_params

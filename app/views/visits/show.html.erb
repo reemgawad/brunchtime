@@ -4,6 +4,9 @@
 <p>long : <%= @restaurant.longitude %></p>
 
 
+<%= link_to "I have arrived !", visit_arrived_path(@visit) %>
+<%= link_to "back to brunch place", restaurants_path %>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
