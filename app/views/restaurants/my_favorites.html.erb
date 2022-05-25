@@ -1,0 +1,13 @@
+<h1>My Brunching Favorites</h1>
+
+<% @favorites.each do |restaurant|  %>
+  <div>
+    <p><%= restaurant.name %></p>
+    <p><%= restaurant.address %></p>
+    <div data-controller="toggle-favorite">
+    <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
+      <%= render 'like_button', restaurant: restaurant %>
+    <% end %>
+    </div>
+  </div>
+<% end %>

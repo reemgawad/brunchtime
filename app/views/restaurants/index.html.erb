@@ -1,7 +1,12 @@
 <h1>All restaurants</h1>
 
 <% @restaurants.each do |restaurant| %>
-<h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-<%= restaurant.address %>
-<%= restaurant.wait_time %>
+  <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+  <%= restaurant.address %>
+  <%= restaurant.wait_time %>
+  <div data-controller="toggle-favorite">
+    <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
+      <%= render 'like_button', restaurant: restaurant %>
+    <% end %>
+  </div>
 <%end %>
