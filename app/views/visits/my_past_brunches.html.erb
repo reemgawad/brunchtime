@@ -1,7 +1,7 @@
 <h1>My past brunch</h1>
 
 <% @visits.each do |visit| %>
-<h3><%= link_to visit.restaurant.name, visit_path(visit) %></h3>
+<h3><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
 <%= visit.date %>
 <%= visit.restaurant.address %>
 <%= visit.restaurant.wait_time %>
