@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :visits, only: %i[edit update]
+
+  get 'my_past_brunches', to: 'visits#my_past_brunches'
   get 'my_favorites', to: 'restaurants#my_favorites'
 end
