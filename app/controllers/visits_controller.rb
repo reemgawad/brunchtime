@@ -40,6 +40,13 @@ class VisitsController < ApplicationController
     }
   end
 
+  def destroy
+    @visit = Visit.find(params[:id])
+    @visit.destroy
+
+    redirect_to restaurants_path
+  end
+
   def arrived!
     @visit = Visit.find(params[:visit_id])
     @visit.arrived = true
