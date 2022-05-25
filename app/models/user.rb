@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_many :visits
+  has_many :past_brunches, through: :visits, source: :restaurant
 end

@@ -30,6 +30,10 @@ class VisitsController < ApplicationController
     @visit = Visit.find(params[:id])
   end
 
+  def my_past_brunches
+    @past_brunches = current_user.past_brunches
+  end
+
   private
 
   def visit_params

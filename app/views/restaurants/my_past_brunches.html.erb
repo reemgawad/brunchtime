@@ -1,0 +1,15 @@
+<h1>My past brunch</h1>
+
+<% @past_brunches.each do |past_brunch| %>
+<h3><%= link_to past_brunch.name, my_past_brunches_path(past_brunch) %></h3>
+<%= past_brunch.date %>
+<%= past_brunch.address %>
+<%= past_brunch.wait_time %>
+<%= past_brunch.rating %>
+<%= past_brunch.feedback %>
+<%= simple_form_for [ @restaurant, @visit ] do |f| %>
+  <%= f.submit "Take me there again", class: "btn btn-primary" %>
+<% end %>
+<%end %>
+
+<%= link_to 'Home', restaurants_path %>
