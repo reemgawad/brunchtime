@@ -79,7 +79,7 @@ restaurant_three = Restaurant.new(
     Saturday: 8am-4pm,
     Sunday: 8am-4pm",
     phone_number: "438-387-3668",
-    wait_time: "15 min"
+    wait_time: "45 min"
 
   }
 )
@@ -180,7 +180,7 @@ visit_two.save!
 visit_three = Visit.new(
   {
     date: Date.today,
-    feedback: "Waited longer than expected. 40 min instead of 20",
+    feedback: "Long as always but wait time accurate.",
     rating: 2,
     arrived: true
   }
