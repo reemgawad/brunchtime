@@ -11,6 +11,8 @@ class RestaurantsController < ApplicationController
         image_url: helpers.asset_url("beer.png")
       }
     end
+    # Keep line below: will have to come back to it with the map
+    # @restaurants.order(wait_time: :asc)
   end
 
   def show
