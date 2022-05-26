@@ -1,6 +1,9 @@
 // Specific CSS for your home-page
+$home-body-height: calc(100vh - 70px);
+
 .home-body {
   background-color: $sunnyside-up-yellow;
+  height: $home-body-height
 }
 
 p {
