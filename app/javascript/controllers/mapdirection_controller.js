@@ -16,7 +16,6 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
     this.#addMarkersToMap()
-    // this.#fitMapToMarkers()
     this.#getCurrentPosition()
   }
 
@@ -34,28 +33,57 @@ export default class extends Controller {
         .addTo(this.map)
     };
 
-  #fitMapToMarkers() {
-    // const bounds = new mapboxgl.LngLatBounds()
-    const bounds = [
-      [-73.556782, 45.562825],
-      [-73.597992, 45.480620]
-    ];
-    this.map.setMaxBounds(bounds);
-    // bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
-    // this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  #fitMapToMarkers(currentPosition) {
+    const bounds = new mapboxgl.LngLatBounds()
+
+    bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
+    bounds.extend([ currentPosition.coords.longitude, currentPosition.coords.latitude ])
+
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
   #getCurrentPosition(){
-    navigator.geolocation.getCurrentPosition((data)=>this.#getRoute(data))
-    }
+    navigator.geolocation.getCurrentPosition((data) => {
+      this.#fitMapToMarkers(data)
+      this.#getRoute(data)
+    })
+  }
 
  #getRoute(data){
-  console.log(data)
-  console.log(data.coords.longitude)
-  console.log(data.coords.latitude)
+  // console.log(data)
+  // console.log(data.coords.longitude)
+  // console.log(data.coords.latitude)
   fetch(`https://api.mapbox.com/directions/v5/mapbox/walking/${data.coords.longitude},${data.coords.latitude};${this.markerValue.lng},${this.markerValue.lat}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`)
-  .then(response => response.json())
-      .then(data => console.log(data))
+    .then(response => response.json())
+    .then((data) => {
+      const route = data.routes[0].geometry.coordinates
+      const geojson = {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: route
+        }
+      }
+      // console.log(geojson)
+      this.map.addLayer({
+        id: 'route',
+        type: 'line',
+        source: {
+          type: 'geojson',
+          data: geojson
+        },
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#3887be',
+          'line-width': 5,
+          'line-opacity': 0.75
+        }
+      });
+    })
  }
 
 
