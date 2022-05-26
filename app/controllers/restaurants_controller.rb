@@ -20,9 +20,15 @@ class RestaurantsController < ApplicationController
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant }),
+        info_window: render_to_string(partial: "info_window.html", locals: { restaurant: restaurant }),
         image_url: helpers.asset_url("beer.png")
       }
+    end
+
+    # implementing ajax in search
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'list.html', locals: { restaurants: @restaurants } }
     end
   end
 
