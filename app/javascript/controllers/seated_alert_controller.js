@@ -7,7 +7,12 @@ export default class extends Controller {
     console.log("connected")
   }
 
-  popup(event) {
-    console.log(event)
+  popup() {
+    alert('Hello')
   }
+
+  setTimeout(() => {
+    popup
+  }, 1000);
+
 }
