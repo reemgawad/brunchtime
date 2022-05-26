@@ -14,14 +14,12 @@
   </head>
 
   <body>
-    <%# <% if  %> %>
+    <%# if  %>
     <%= render 'shared/navbar' %>
 
 
     <%= render 'shared/flashes' %>
-    <div>
-      <%= yield %>
-      <%= render "shared/footer" %>
-    </div>
+
+    <%= yield %>
   </body>
 </html>
