@@ -50,7 +50,9 @@ export default class extends Controller {
   }
 
  #getRoute(data){
-  // console.log(data)
+  console.log(data.coords)
+  const start = [data.coords.longitude, data.coords.latitude];
+  console.log(start)
   // console.log(data.coords.longitude)
   // console.log(data.coords.latitude)
   fetch(`https://api.mapbox.com/directions/v5/mapbox/walking/${data.coords.longitude},${data.coords.latitude};${this.markerValue.lng},${this.markerValue.lat}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`)
@@ -83,6 +85,34 @@ export default class extends Controller {
           'line-opacity': 0.75
         }
       });
+
+
+
+      this.map.addLayer({
+        id: 'point',
+        type: 'circle',
+        source: {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: [
+              {
+                type: 'Feature',
+                properties: {},
+                geometry: {
+                  type: 'Point',
+                  coordinates: start
+                }
+              }
+            ]
+          }
+        },
+        paint: {
+          'circle-radius': 10,
+          'circle-color': '#3887be'
+        }
+      });
+
     })
  }
 
