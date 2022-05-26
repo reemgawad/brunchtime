@@ -197,7 +197,7 @@ print "Seeding visits..."
 # Visits
 visit_one = Visit.new(
   {
-    date: Date.today,
+    date: Date.today - 5,
     feedback: "Waited 12 min. Wait-time close to accurate.",
     rating: 4,
     arrived: true
@@ -209,7 +209,7 @@ visit_one.save!
 
 visit_two = Visit.new(
   {
-    date: Date.today,
+    date: Date.today - 30,
     feedback: "Waited 10 min. Faster than expected wait-time :)",
     rating: 4,
     arrived: true
@@ -221,7 +221,7 @@ visit_two.save!
 
 visit_three = Visit.new(
   {
-    date: Date.today,
+    date: Date.today - 10,
     feedback: "Long as always but wait time accurate.",
     rating: 2,
     arrived: true
@@ -233,7 +233,7 @@ visit_three.save!
 
 visit_four = Visit.new(
   {
-    date: Date.today
+    date: Date.today - 14
   }
 )
 visit_four.user = user_one
@@ -243,7 +243,7 @@ puts "Done."
 
 visit_five = Visit.new(
   {
-    date: Date.today,
+    date: Date.today - 7,
     feedback: "Waited 25 min instead of 30 min.",
     rating: 4,
     arrived: true
@@ -255,7 +255,7 @@ visit_five.save!
 
 visit_six = Visit.new(
   {
-    date: Date.today,
+    date: Date.today - 11,
     feedback: "Waited exactly 20 min!",
     rating: 5,
     arrived: true
