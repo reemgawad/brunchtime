@@ -19,9 +19,10 @@
   <p><strong>Comment:</strong> <%= visit.feedback %></p>
 
   <p><strong>Date Visited:</strong> <%= visit.date %></p>
-  <%= link_to "Edit feedback", edit_visit_path(visit) %>
+  <% if visit.user == current_user %>
+    <%= link_to "Edit feedback", edit_visit_path(visit) %>
+  <% end %>
 <% end %>
-
 <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
 
 <%= simple_form_for [ @restaurant, @visit ] do |f| %>

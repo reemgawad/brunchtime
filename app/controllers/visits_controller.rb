@@ -18,6 +18,7 @@ class VisitsController < ApplicationController
     @visit.arrived = true
     @visit.update(visit_params)
     @restaurant = @visit.restaurant
+    # @visit.user = current_user
 
     if @visit.update(visit_params)
       redirect_to restaurant_path(@restaurant)
