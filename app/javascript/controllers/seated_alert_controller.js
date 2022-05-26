@@ -1,18 +1,14 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
 
   connect() {
-    console.log("connected")
+    // console.log("connected")
+    setTimeout(() => alert('Hello'), 5000)
   }
 
-  popup() {
-    alert('Hello')
-  }
-
-  setTimeout(() => {
-    popup
-  }, 1000);
-
+  // function popup {
+  //   let modalToggle = document.getElementById('staticBackdrop') // relatedTarget
+  //   myModal.show(modalToggle)
+  // }
 }
