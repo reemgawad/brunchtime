@@ -57,7 +57,7 @@ class VisitsController < ApplicationController
   end
 
   def my_past_brunches
-    @visits = current_user.visits.order(created_at: :desc)
+    @visits = current_user.visits.order(date: :desc)
   end
 
   private
