@@ -4,15 +4,31 @@
   <div class="d-flex justify-content-between">
     <div>
       <%= form_tag restaurants_path, method: :get do %>
+
         <div class="search-form-control form-group d-flex"  style="width: 600px; margin: 0 auto;">
-          <%= text_field_tag :query,
-            params[:query],
+          <%= text_field_tag :location,
+            params[:location],
             class: "form-control",
-            placeholder: "Search restaurants..."
+            placeholder: "Search locations..."
           %>
           <%= submit_tag "Find", class: "btn btn-success" %>
+        </div><br>
+
+        <h6> Search by: </h6>
+        <div class="search-form-control form-group d-flex" style="width: 600px; margin: 0 auto;">
+          <select name=wait_time>
+            <option value="">Select</option>
+            <option value="5"> less < 5</option>
+            <option value="10"> less < 10</option>
+            <option value="15"> less < 15</option>
+            <option value="30"> less < 30</option>
+            <option value="60">less < 60</option>
+            <%= submit_tag "Filter", class: "btn btn-success" %>
+          </select>
         </div>
-     <% end %>
+      <% end %><br>
+
+
       <% @restaurants.each do |restaurant| %>
         <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
         <p><b>Address:</b> <%= restaurant.address %></p>

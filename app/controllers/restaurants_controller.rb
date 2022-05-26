@@ -2,13 +2,20 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @restaurants = Restaurant.all
-    if params[:query].present?
-      # @restaurants = Restaurant.search_by_address(params[:query])
-      @restaurants = Restaurant.where("address ILIKE ?", "%#{params[:query]}%")
-    else
-      @restaurants = Restaurant.all
+    # Four scenarios:
+    # 1- No search values present
+    # 2- Only location value
+    # 3- Only waittime value
+    # "wait_time < ?", "#{params[:waittime]}"
+    # 4- Both Location and Waittime
+    @restaurants = Restaurant.all.order(wait_time: :asc)
+    unless params[:location].blank?
+      @restaurants = @restaurants.where("address ILIKE ?", "%#{params[:location]}%")
     end
+    unless params[:wait_time].blank?
+      @restaurants = @restaurants.where("wait_time <= ?", params[:wait_time])
+    end
+
     @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,
@@ -17,8 +24,6 @@ class RestaurantsController < ApplicationController
         image_url: helpers.asset_url("beer.png")
       }
     end
-    # Keep line below: will have to come back to it with the map
-    # @restaurants.order(wait_time: :asc)
   end
 
   def show

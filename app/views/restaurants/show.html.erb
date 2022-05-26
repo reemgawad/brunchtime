@@ -1,7 +1,7 @@
 <h1><%= @restaurant.name%></h1>
 
 <%= cl_image_tag @restaurant.photo.key, height: 300, width: 400, crop: :fill if @restaurant.photo.attached? %>
-<p><strong>Wait-time:</strong> <%= @restaurant.wait_time %></p>
+<p><strong>Wait-time:</strong> <%= @restaurant.wait_time %> min</p>
 <p><strong>Average Accuracy Rating: # needs some logic to do this</strong></p>
 
 
