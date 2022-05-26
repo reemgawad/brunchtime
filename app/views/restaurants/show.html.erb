@@ -24,7 +24,10 @@
 
 <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
 
-<%= simple_form_for [ @restaurant, @visit ] do |f| %>
+<%= simple_form_for [ @restaurant, @visit ],
+    html: { data: {
+                    controller: "seated-alert",
+                    action: "submit->seated-alert#popup" } } do |f| %>
   <%= f.submit "Take me there", class: "btn btn-primary" %>
 <% end %>
 
