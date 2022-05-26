@@ -8,21 +8,14 @@ class RestaurantsController < ApplicationController
     # 3- Only waittime value
     # "wait_time < ?", "#{params[:waittime]}"
     # 4- Both Location and Waittime
-    if params[:location].present?
-      @restaurants = Restaurant.where("address ILIKE ?", "%#{params[:location]}%")
-    elsif params[:wait_time].present?
-      @restaurants = Restaurant.where("wait_time < 5", "#{params[:wait_time]}")
-      @restaurants = Restaurant.where("wait_time < 10", "#{params[:wait_time]}")
-      @restaurants = Restaurant.where("wait_time < 15", "#{params[:wait_time]}")
-      @restaurants = Restaurant.where("wait_time < 30", "#{params[:wait_time]}")
-      @restaurants = Restaurant.where("wait_time < 60", "#{params[:wait_time]}")
-    elsif params[:wait_time].present? && params[:location].present?
-      @restaurants = Restaurant.where("wait_time < ? && address ILIKE ?", "#{params[:wait_time]}, %#{params[:location]}%")
-    else
-      @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.order(wait_time: :asc)
+    unless params[:location].blank?
+      @restaurants = @restaurants.where("address ILIKE ?", "%#{params[:location]}%")
+    end
+    unless params[:wait_time].blank?
+      @restaurants = @restaurants.where("wait_time <= ?", params[:wait_time])
     end
 
-    @restaurants = @restaurants.order(wait_time: :asc)
     @markers = @restaurants.geocoded.map do |restaurant|
       {
         lat: restaurant.latitude,

@@ -100,7 +100,7 @@ restaurant_four = Restaurant.new(
     Saturday:	9am-4pm,
     Sunday:	9aam-4pm",
     phone_number: "514-757-5190",
-    wait_time: 20
+    wait_time: 5
 
   }
 )
@@ -121,7 +121,7 @@ restaurant_five = Restaurant.new(
     Saturday:	9:30am-3pm 6pm-11:45pm,
     Sunday:	9:30am-3pm  6pm-11pm",
     phone_number: "438-387-4252",
-    wait_time: 30
+    wait_time: 60
 
   }
 )
