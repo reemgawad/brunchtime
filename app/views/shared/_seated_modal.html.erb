@@ -17,7 +17,8 @@
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <%= link_to "Yes", visit_arrived_path(@visit), class: "btn btn-primary" %>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                data-seated-alert-target="noButton" data-action="click->seated-alert#connect">No</button>
         <%= link_to "I'm not going", visit_path(@visit), method: :delete %>
       </div>
     </div>
