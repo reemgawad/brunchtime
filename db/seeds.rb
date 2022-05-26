@@ -37,7 +37,7 @@ restaurant_one = Restaurant.new(
     Saturday: 9am-4pm,
     Sunday: 9am-4pm",
     phone_number: "514-379-6455",
-    wait_time: "15 min"
+    wait_time: 15
 
   }
 )
@@ -58,7 +58,7 @@ restaurant_two = Restaurant.new(
     Saturday:	8am-2:45pm,
     Sunday:	8am-2:45pm",
     phone_number: "514-931-3999",
-    wait_time: "10 min"
+    wait_time: 10
 
   }
 )
@@ -79,7 +79,7 @@ restaurant_three = Restaurant.new(
     Saturday: 9am-2:30pm,
     Sunday: 9am-2:30pm",
     phone_number: "514-524-6663",
-    wait_time: "15 min"
+    wait_time: 15
 
   }
 )
@@ -100,7 +100,7 @@ restaurant_four = Restaurant.new(
     Saturday:	9am-4pm,
     Sunday:	9aam-4pm",
     phone_number: "514-757-5190",
-    wait_time: "20 min"
+    wait_time: 20
 
   }
 )
@@ -121,7 +121,7 @@ restaurant_five = Restaurant.new(
     Saturday:	9:30am-3pm 6pm-11:45pm,
     Sunday:	9:30am-3pm  6pm-11pm",
     phone_number: "438-387-4252",
-    wait_time: "30 min"
+    wait_time: 30
 
   }
 )
@@ -142,7 +142,7 @@ restaurant_six = Restaurant.new(
     Saturday:	9am-4pm,
     Sunday:	9am-4pm",
     phone_number: "514-933-1412",
-    wait_time: "20 min"
+    wait_time: 20
 
   }
 )
@@ -163,7 +163,7 @@ restaurant_seven = Restaurant.new(
     Saturday:	9am-4pm,
     Sunday:	9am-4pm",
     phone_number: "514-933-1412",
-    wait_time: "30 min"
+    wait_time: 25
 
   }
 )
@@ -184,7 +184,7 @@ restaurant_eight = Restaurant.new(
     Saturday:	8am-3pm,
     Sunday:	8am-3pm",
     phone_number: "514-379-4449",
-    wait_time: "10 min"
+    wait_time: 10
 
   }
 )
