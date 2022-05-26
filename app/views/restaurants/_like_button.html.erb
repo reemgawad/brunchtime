@@ -1,4 +1,4 @@
 <div class="like-icon mx-2"
      data-id="<%= restaurant.id %>">
-  <i class="fas fa-heart <%= 'text-danger' if current_user.favorited?(restaurant) %>"></i>
+  <i class="fas fa-heart <%= 'text-danger' if !current_user.nil? && current_user.favorited?(restaurant) %>"></i>
 </div>
