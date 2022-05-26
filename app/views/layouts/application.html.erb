@@ -15,11 +15,13 @@
 
   <body>
     <%# if  %>
-    <%= render 'shared/navbar' %>
-
-
+      <%= render 'shared/navbar' %>
+    <%# end %>
     <%= render 'shared/flashes' %>
+    <div>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
 
-    <%= yield %>
   </body>
 </html>
