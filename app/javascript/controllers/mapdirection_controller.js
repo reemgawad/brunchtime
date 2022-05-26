@@ -12,48 +12,49 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
+      center: [this.markerValue.lng, this.markerValue.lat],
       style: "mapbox://styles/mapbox/streets-v10"
     })
-    // this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+    this.#addMarkersToMap()
+    // this.#fitMapToMarkers()
+    this.#getCurrentPosition()
   }
 
-  // #addMarkersToMap() {
+  #addMarkersToMap() {
 
-  //     const customMarker = document.createElement("div")
-  //     customMarker.className = "marker"
-  //     customMarker.style.backgroundImage = `url('${this.markerValue.image_url}')`
-  //     customMarker.style.backgroundSize = "contain"
-  //     customMarker.style.width = "25px"
-  //     customMarker.style.height = "25px"
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${this.markerValue.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "25px"
+      customMarker.style.height = "25px"
 
-  //     new mapboxgl.Marker(customMarker)
-  //       .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
-  //       .addTo(this.map)
-  //   };
+      new mapboxgl.Marker(customMarker)
+        .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
+        .addTo(this.map)
+    };
 
   #fitMapToMarkers() {
     // const bounds = new mapboxgl.LngLatBounds()
     const bounds = [
-      [-123.069003, 45.395273],
-      [-122.303707, 45.612333]
+      [-73.556782, 45.562825],
+      [-73.597992, 45.480620]
     ];
-    map.setMaxBounds(bounds);
+    this.map.setMaxBounds(bounds);
     // bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
     // this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
-  // #getRoute () {
-  //   fetch(`https://api.mapbox.com/directions/v5/mapbox/walking/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`, {
-  //     method: "POST",
-  //     headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
-  //     body: new FormData(this.formTarget)
-  //   })
-  //     .then(response => response.json())
-  //     .then((data) => {
-  //       if (data.inserted_item) {
-  //         this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
-  //       }
-  //       thi
-  // }
+  #getCurrentPosition(){
+    navigator.geolocation.getCurrentPosition((data)=>this.#getRoute(data))
+    }
+
+ #getRoute(data){
+  console.log(data)
+  console.log(data.coords.longitude)
+  console.log(data.coords.latitude)
+    fetch(`https://api.mapbox.com/directions/v5/mapbox/walking/${data.coords.longitude},${data.coords.latitude};${this.markerValue.lng},${this.markerValue.lat}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`)
+      .then(response => response.json())
+      .then(data => console.log(data))
+ }
 }
