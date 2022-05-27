@@ -4,6 +4,7 @@ $home-body-height: calc(100vh - 70px);
 .home-body {
   background-color: $sunnyside-up-yellow;
   height: $home-body-height;
+  overflow: hidden;
 }
 
 p {
@@ -11,8 +12,5 @@ p {
 }
 
 .egg-container {
-  position: absolute;
-  bottom: 0;
-  right: -35px;
-  overflow: hidden
+  position: relative;
 }
