@@ -10,3 +10,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.brown-link {
+  color: $hash-brown !important
+}
+
+.brown-link:hover {
+  color: #7b4c12 !important
+}
+
+.navbar-override {
+  flex-direction: row !important
+}
+
+.navbar-z-index {
+  z-index: 1 !important;
+  position: absolute !important
+}
