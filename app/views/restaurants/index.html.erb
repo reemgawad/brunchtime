@@ -34,6 +34,11 @@
 
       <div data-refresh-list-target="restaurantsList" >
         <%= render 'list.html', restaurants: @restaurants %>
+        <div>
+          <button class="brunch-button" data-action="click->see-map-or-list-button#show">
+              See Map
+          </button>
+        </div>
       </div>
     </div>
 
