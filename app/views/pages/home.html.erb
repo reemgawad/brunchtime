@@ -1,10 +1,17 @@
 <div class="home-body">
 
-  <%= image_tag "Brunchtimelogo.png" %>
-  <%= image_tag "bkgd_egg.png" %>
+  <div class="container">
+    <div class="d-flex py-5">
+      <%= image_tag "Brunchtimelogo.png", style: "width: 450px" %>
+    </div>
+    <div>
+      <p><strong>Queue no more</strong></p>
+      <%= link_to 'Find a spot', restaurants_path, class: "brunch-button" %>
+    </div>
+  </div>
 
-  <p>Queue no more!</p>
-
-  <%= link_to 'Find a spot', restaurants_path, class: "brunch-button" %>
+  <div class="egg-container">
+    <%= image_tag "bkgd_egg.png" %>
+  </div>
 
 </div>
