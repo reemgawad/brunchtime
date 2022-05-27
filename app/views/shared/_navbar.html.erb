@@ -1,27 +1,27 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to restaurants_path, class: "navbar-brand" do %>
+      <%= image_tag "Brunchtimelogo.png", style: "width: 200px"%>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> %>
+      <%# <span class="navbar-toggler-icon"></span> %>
+    <%# </button> %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div id="navbarSupportedContent" style="display: inline">
+      <ul class="navbar-nav me-auto navbar-override">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link brown-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag src= "https://kitt.lewagon.com/placeholder/users/lienynn", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <p class="welcome-msg text-center">  Welcome <%= current_user.first_name %>!</p>
-              <%= link_to "Restaurants", restaurants_path, class: "dropdown-item" %>
-              <%= link_to "Favorites", my_favorites_path, class: "dropdown-item" %>
-              <%= link_to "Brunching History", my_past_brunches_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Restaurants", restaurants_path, class: "dropdown-item brown-link" %>
+              <%= link_to "Favorites", my_favorites_path, class: "dropdown-item brown-link" %>
+              <%= link_to "Brunching History", my_past_brunches_path, class: "dropdown-item brown-link" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item brown-link" %>
             </div>
           </li>
         <% else %>
