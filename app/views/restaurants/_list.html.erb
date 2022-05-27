@@ -1,12 +1,30 @@
 <%# <div data-refresh-list-target="restaurantsList"> %>
-  <% restaurants.each do |restaurant| %>
-    <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-    <p><b>Address:</b> <%= restaurant.address %></p>
-    <p><b>Wait-time:</b> <%= restaurant.wait_time %> min</p>
-    <div data-controller="toggle-favorite">
-      <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
-        <%= render 'like_button.html', restaurant: restaurant %>
-      <% end %>
-    </div>
-  <%end %>
+<div class="container">
+  <div class="row">
+    <% restaurants.each do |restaurant| %>
+      <div>
+        <div class="card-product justify-content-between">
+
+          <div>
+            <img src= "<%= cl_image_path (restaurant.photo.key)%>">
+          </div>
+
+          <div>
+            <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+            <p><b>Wait-time:</b> <%= restaurant.wait_time %> min</p>
+            <p><b>Address:</b> <%= restaurant.address %></p>
+          </div>
+
+          <div data-controller="toggle-favorite">
+            <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
+              <%= render 'like_button.html', restaurant: restaurant %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+
 <%# </div> %>
