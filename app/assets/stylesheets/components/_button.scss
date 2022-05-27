@@ -1,15 +1,25 @@
 .brunch-button {
-  background-color: $reem-green;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 8px 16px;
+    background-color: $reem-green;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: none;
 }
 
 .brunch-button:hover {
-  background-color: #00ab80;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 8px 16px;
+    background-color: #00ab80;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.back-to-list-button a {
+    text-decoration: none;
+    color: $hash-brown;
+}
+
+.back-to-list-button a:hover {
+    color: #271705;
 }

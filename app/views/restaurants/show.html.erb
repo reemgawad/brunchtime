@@ -1,32 +1,36 @@
-<h1><%= @restaurant.name%></h1>
+<div class="show-body">
+  <%= cl_image_tag @restaurant.photo.key, crop: :fill, class: 'restaurant-image' if @restaurant.photo.attached? %>
+    <h1><%= @restaurant.name%></h1>
+    <p><strong>Wait-time:</strong> <%= @restaurant.wait_time %> min</p>
+    <p><strong>Average Accuracy Rating: # needs some logic to do this</strong></p>
 
-<%= cl_image_tag @restaurant.photo.key, height: 300, width: 400, crop: :fill if @restaurant.photo.attached? %>
-<p><strong>Wait-time:</strong> <%= @restaurant.wait_time %> min</p>
-<p><strong>Average Accuracy Rating: # needs some logic to do this</strong></p>
 
+    <p><strong>Address:</strong> <%= @restaurant.address %></p>
+    <p><strong>Description:</strong> <%= @restaurant.description %></p>
+    <p><strong>Price Range:</strong> <%= @restaurant.price_range %></p>
+    <p><strong>Opening Hours:</strong><% @restaurant.opening_hours.split(",").each do |hour| %></p>
+      <%= hour %>
+    <% end %>
+  <p><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
 
-<p><strong>Address:</strong> <%= @restaurant.address %></p>
-<p><strong>Description:</strong> <%= @restaurant.description %></p>
-<p><strong>Price Range:</strong> <%= @restaurant.price_range %></p>
-<p><strong>Opening Hours:</strong><% @restaurant.opening_hours.split(",").each do |hour| %></p>
-<%= hour %>
-<% end %>
-<p><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
+  <h2>Feedback from Brunchers</h2>
+    <% @visits.each do |visit| %>
+      <p><strong>Accuracy Rating:</strong> <%= visit.rating %></p>
+      <p><strong>Comment:</strong> <%= visit.feedback %></p>
 
-<h2>Feedback from Brunchers</h2>
-<% @visits.each do |visit| %>
-  <p><strong>Accuracy Rating:</strong> <%= visit.rating %></p>
-  <p><strong>Comment:</strong> <%= visit.feedback %></p>
+      <p><strong>Date Visited:</strong> <%= visit.date %></p>
+      <% if visit.user == current_user %>
+        <%= link_to "Edit feedback", edit_visit_path(visit) %>
+      <% end %>
+    <% end %>
+  <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
 
-  <p><strong>Date Visited:</strong> <%= visit.date %></p>
-  <% if visit.user == current_user %>
-    <%= link_to "Edit feedback", edit_visit_path(visit) %>
-  <% end %>
-<% end %>
-<%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
-
-<%= simple_form_for [ @restaurant, @visit ] do |f| %>
-  <%= f.submit "Take me there", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to 'Back to list', restaurants_path %>
+  <div>
+    <%= simple_form_for [ @restaurant, @visit ] do |f| %>
+      <%= f.submit "Take me there", class: 'brunch-button' %>
+    <% end %>
+  </div>
+  <div class="back-to-list-button">
+    <%= link_to 'Back to brunch places', restaurants_path %>
+  </div>
+</div>
