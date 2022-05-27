@@ -21,7 +21,7 @@
 
       <h6> Search by: </h6>
         <div class="search-form-control form-group d-flex" style="width: 600px; margin: 0 auto;">
-          <select name=wait_time>
+          <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
             <option value="">Select</option>
             <option value="5"> less < 5</option>
             <option value="10"> less < 10</option>
