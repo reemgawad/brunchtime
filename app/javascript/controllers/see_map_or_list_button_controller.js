@@ -10,7 +10,7 @@ export default class extends Controller {
   show(event) {
     this.mapTarget.classList.toggle("d-none")
     this.listTarget.classList.toggle("d-none")
-    console.log(event)
+    console.log("pas event")
     if (event.target.innerText == "See Map") {
       event.target.innerText = "See List"
     } else if (event.target.innerText == "See List") {

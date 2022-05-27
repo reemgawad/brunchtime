@@ -29,6 +29,7 @@ class RestaurantsController < ApplicationController
     respond_to do |format|
       format.html
       format.text { render partial: 'list.html', locals: { restaurants: @restaurants } }
+      # format.json { render json: { restaurants: "lalala" } }
     end
   end
 
