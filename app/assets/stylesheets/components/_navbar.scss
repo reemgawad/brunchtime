@@ -22,3 +22,8 @@
 .navbar-override {
   flex-direction: row !important
 }
+
+.navbar-z-index {
+  z-index: 1 !important;
+  position: absolute !important
+}

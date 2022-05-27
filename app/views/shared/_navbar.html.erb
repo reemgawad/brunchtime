@@ -3,10 +3,10 @@
     <%= link_to restaurants_path, class: "navbar-brand" do %>
       <%= image_tag "Brunchtimelogo.png", style: "width: 200px"%>
     <% end %>
-
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> %>
-      <%# <span class="navbar-toggler-icon"></span> %>
-    <%# </button> %>
+<%#
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> %>
 
     <div id="navbarSupportedContent" style="display: inline">
       <ul class="navbar-nav me-auto navbar-override">
@@ -16,7 +16,7 @@
           </li>
           <li class="nav-item dropdown">
             <%= image_tag src= "https://kitt.lewagon.com/placeholder/users/lienynn", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-end navbar-z-index" aria-labelledby="navbarDropdown">
               <p class="welcome-msg text-center">  Welcome <%= current_user.first_name %>!</p>
               <%= link_to "Restaurants", restaurants_path, class: "dropdown-item brown-link" %>
               <%= link_to "Favorites", my_favorites_path, class: "dropdown-item brown-link" %>
