@@ -9,3 +9,9 @@ $home-body-height: calc(100vh - 70px);
 p {
   color: $hash-brown
 }
+
+.egg-container {
+  position: absolute;
+  bottom: 0;
+  right: -35px;
+}

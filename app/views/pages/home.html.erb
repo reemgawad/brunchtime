@@ -1,10 +1,19 @@
 <div class="home-body">
 
-  <%= image_tag "Brunchtimelogo.png", style: "width: 500px" %>
-  <%= image_tag "bkgd_egg.png" %>
+  <div class="">
+    <div class="d-flex justify-content-center p-5">
+      <%= image_tag "Brunchtimelogo.png", style: "width: 450px" %>
+    </div>
+    <div>
+      <p><strong>Queue no more</strong></p>
+      <%= link_to 'Find a spot', restaurants_path, class: "brunch-button" %>
+    </div>
 
-  <p><strong>Queue no more</strong></p>
+  </div>
 
-  <%= link_to 'Find a spot', restaurants_path, class: "brunch-button" %>
+
+  <div class="egg-container">
+    <%= image_tag "bkgd_egg.png" %>
+  </div>
 
 </div>
