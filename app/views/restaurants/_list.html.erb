@@ -18,8 +18,8 @@
           <div data-controller="toggle-favorite">
             <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
               <div class="like-icon mx-2"   data-id="<%= restaurant.id %>">
-                <svg id="Layer_1" enable-background="new 0 0 512 512" height="'48'" viewBox="0 0 512 512" width="48" xmlns="http://www.w3.org/2000/svg">
-                <path d="m496 189.981c0 118.96-126.75 218.71-196.03 264.34-26.68 17.58-61.26 17.58-87.94 0-90.163-59.344-196.03-155.893-196.03-264.34 0-80.37 57.3-145.51 128-145.51 32.13 0 61.5 13.45 83.97 35.68 15.46 15.3 40.6 15.3 56.06 0 22.47-22.23 51.84-35.68 83.97-35.68 72.376 0 128 67.061 128 145.51z" fill="#ece2e2"/>
+                <svg id="Layer_1" enable-background="new 0 0 512 512" height="'30'" viewBox="0 0 512 512" width="30" xmlns="http://www.w3.org/2000/svg">
+                <path data-toggle-favorite-target="svgPath2" class="egg-heart-shade <%= 'liked' if !current_user.nil? && current_user.favorited?(restaurant) %>" d="m496 189.981c0 118.96-126.75 218.71-196.03 264.34-26.68 17.58-61.26 17.58-87.94 0-90.163-59.344-196.03-155.893-196.03-264.34 0-80.37 57.3-145.51 128-145.51 32.13 0 61.5 13.45 83.97 35.68 15.46 15.3 40.6 15.3 56.06 0 22.47-22.23 51.84-35.68 83.97-35.68 72.376 0 128 67.061 128 145.51z" />
                 <path data-toggle-favorite-target="svgPath" class="egg-heart <%= 'liked' if !current_user.nil? && current_user.favorited?(restaurant) %>" d="m291.97 412.471c-26.68 17.57-61.26 17.57-87.94 0-75.034-49.421-160.891-124.545-187.6-210.64-6.132-83.153 51.554-157.36 127.57-157.36 32.13 0 61.5 13.45 83.97 35.68 15.46 15.3 40.6 15.3 56.06 0 67.391-66.671 172.295-35.859 203.68 58.2 6.59 112.072-101.992 212.361-195.74 274.12z"   />
                 <path d="m384 249.651c0 57.44-46.56 104-104 104s-104-46.56-104-104c0-57.561 46.681-104 104-104 57.336 0 104 46.457 104 104z" fill="#efd66c"/>
                 <path d="m381.22 225.651c-10.84 45.87-52.04 80-101.22 80s-90.38-34.13-101.22-80c10.84-45.87 52.04-80 101.22-80s90.38 34.13 101.22 80z" fill="#ffe773"/>
