@@ -1,3 +1,15 @@
-.fa-heart {
-  color: black;
+.egg-heart {
+  fill: #f2f2f2;
+}
+
+.egg-heart.liked {
+  fill: #EB4242;
+}
+
+.egg-heart-shade {
+  fill: #ece2e2;
+}
+
+.egg-heart-shade.liked {
+  fill: #b82e2e;
 }
