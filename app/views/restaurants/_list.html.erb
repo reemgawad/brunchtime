@@ -5,12 +5,12 @@
       <div class=" d-flex justify-content-center">
         <div class="card-product justify-content-between">
 
-          <div>
+          <div class="me-3">
             <img src= "<%= cl_image_path (restaurant.photo.key)%>">
           </div>
 
           <div>
-            <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+            <h3 class="fs-6"><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
             <p><b>Wait-time:</b> <%= restaurant.wait_time %> min</p>
             <p><b>Address:</b> <%= restaurant.address %></p>
           </div>

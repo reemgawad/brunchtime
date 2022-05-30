@@ -3,8 +3,14 @@
     <h1 class="text-center mt-2">My Brunching Favorites</h1>
     <hr class="text-center w-25 m-auto border border-1 border-primary opacity-100">
   </div>
-</div>
+  <div class="row">
+    <% @favorites.each do |restaurant|  %>
+    <div class=" d-flex justify-content-center">
+      <div class="card-product justify-content-between">
 
+        <div class="me-3">
+          <img src= "<%= cl_image_path (restaurant.photo.key)%>">
+        </div>
 
 <% @favorites.each do |restaurant|  %>
   <div>
@@ -25,6 +31,7 @@
         </div>
     <% end %>
     </div>
+    <% end %>
   </div>
 <% end %>
 
