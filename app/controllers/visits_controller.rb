@@ -13,6 +13,10 @@ class VisitsController < ApplicationController
     end
   end
 
+  def new
+    @visit = Visit.new
+  end
+
   def update
     @visit = Visit.find(params[:id])
     @visit.arrived = true

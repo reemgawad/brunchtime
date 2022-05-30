@@ -8,7 +8,7 @@
   <div class="m-3">
     <%= simple_form_for @visit do |f| %>
       <div class="feedback-container">
-        <%= f.input :rating, as: :select, collection: 1..5, include_blank: false, label: "How accurate was the wait-time?" %>
+        <%= f.input :rating, as: :select, collection: (1..5).to_a, include_blank: false, label: "How accurate was the wait-time?" %>
         <%= f.input :feedback, placeholder: "Anything you'd like to mention?" %>
       </div>
       <div class="text-center mt-2">
@@ -17,6 +17,7 @@
     <% end %>
   </div>
 
+</div>
   <div class="egg-container">
     <%= image_tag "bkgd_egg.png", style: "bottom: -285px" %>
   </div>
