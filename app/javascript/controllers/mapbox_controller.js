@@ -4,9 +4,10 @@ import mapboxgl from "mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
-
     markers: Array
   }
+
+  static targets = ["marker"]
 
   connect() {
 
@@ -16,10 +17,21 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
-    this.#addMarkersToMap()
+    this.#addMarkersAndResizeMap()
+  }
 
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+  refreshMapAjax() {
+    // Remove all markers from the map.
+    this.#clearMarkers()
+    // Add the new markers and resize the map to fit them.
+    this.#addMarkersAndResizeMap()
+  }
+
+  #addMarkersAndResizeMap() {
+    if (this.markersValue.length > 0) {
+      this.#addMarkersToMap()
+      this.#fitMapToMarkers()
+    }
   }
 
   #addMarkersToMap() {
@@ -33,6 +45,7 @@ export default class extends Controller {
       customMarker.style.backgroundSize = "contain"
       customMarker.style.width = "25px"
       customMarker.style.height = "25px"
+      customMarker.dataset.mapboxTarget = "marker"
 
       // Pass the element as an argument to the new marker
       new mapboxgl.Marker(customMarker)
@@ -40,7 +53,6 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.map)
     })
-
   }
 
   #fitMapToMarkers() {
@@ -49,4 +61,8 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
+  #clearMarkers() {
+    this.markersValue.length = 0
+    this.markerTargets.forEach(marker => marker.remove())
+  };
 }

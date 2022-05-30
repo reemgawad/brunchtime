@@ -50,9 +50,9 @@ export default class extends Controller {
   }
 
  #getRoute(data){
-  console.log(data.coords)
+  // console.log(data.coords)
   const start = [data.coords.longitude, data.coords.latitude];
-  console.log(start)
+  // console.log(start)
   // console.log(data.coords.longitude)
   // console.log(data.coords.latitude)
   fetch(`https://api.mapbox.com/directions/v5/mapbox/walking/${data.coords.longitude},${data.coords.latitude};${this.markerValue.lng},${this.markerValue.lat}?steps=true&geometries=geojson&access_token=${this.apiKeyValue}`)

@@ -1,8 +1,59 @@
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: #FCEFB4;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  padding-left: 20px;
+  width: 650px;
+}
+
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: scale-down;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product h6 {
+  margin-top: 10px;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product-infos a {
+  text-decoration: none;
+  color: #58370E;
+  font-weight: 200;
+}
+
+.card-product-infos a:hover {
+  color: #7F8487;
+}
+
 // for restaurant show page
 .card-category {
     background-size: cover;
     background-position: center;
-    height: 180px;
+    height: 240px;
     display: flex;
     justify-content: center;
     align-items: center;

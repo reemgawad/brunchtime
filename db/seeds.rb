@@ -15,6 +15,14 @@ print "Seeding users..."
 # users
 user_one = User.create!(
   {
+    email: "p@p.p",
+    first_name: "Philippine",
+    password: "secret"
+  }
+)
+
+user_two = User.create!(
+  {
     email: "l@l.l",
     first_name: "Lien",
     password: "secret"
@@ -75,7 +83,7 @@ restaurant_four = Restaurant.new(
     price_range: "$$",
     opening_hours: "9am-5pm",
     phone_number: "514-757-5190",
-    wait_time: 5
+    wait_time: 30
 
   }
 )
@@ -105,7 +113,7 @@ restaurant_six = Restaurant.new(
     price_range: "$$",
     opening_hours: "8am-4pm",
     phone_number: "514-933-1412",
-    wait_time: 20
+    wait_time: 5
 
   }
 )
@@ -132,7 +140,7 @@ restaurant_eight = Restaurant.new(
     name: "Ginko Café & Bar",
     address: "308 RUE STE-CATHERINE EST, MONTREAL",
     description: "Popular brunch spot serving eclectic Canadian fare in a chic, open room with lots of natural light.",
-    price_range: "$$",
+    price_range: "$",
     opening_hours: "7am-9pm",
     phone_number: "514-379-4449",
     wait_time: 10
@@ -141,6 +149,36 @@ restaurant_eight = Restaurant.new(
 )
 restaurant_eight.photo.attach(io: File.open('app/assets/images/ginko.jpeg'), filename: 'ginko.jpeg')
 restaurant_eight.save!
+
+restaurant_nine = Restaurant.new(
+  {
+    name: "Dandy",
+    address: "244 RUE ST JACQUES, MONTREAL",
+    description: "Chic restaurant serving all-day brunch, pizza & baked goods, plus coffee, cocktails & natural wines.",
+    price_range: "$$$",
+    opening_hours: "10am-4pm",
+    phone_number: "514-289-9996",
+    wait_time: 60
+
+  }
+)
+restaurant_nine.photo.attach(io: File.open('app/assets/images/dandy.jpeg'), filename: 'dandy.jpeg')
+restaurant_nine.save!
+
+restaurant_ten = Restaurant.new(
+  {
+    name: "Tommy Café",
+    address: "151 RUE ST PAUL OUEST, MONTREAL",
+    description: "This opulently quaint bi-level coffee shop with historical architecture serves sweets & sandwiches.",
+    price_range: "$$",
+    opening_hours: "8am-4pm",
+    phone_number: "514-419-8522",
+    wait_time: 15
+
+  }
+)
+restaurant_ten.photo.attach(io: File.open('app/assets/images/tommy.jpeg'), filename: 'tommy.jpeg')
+restaurant_ten.save!
 
 puts "Done."
 print "Seeding visits..."
@@ -154,7 +192,7 @@ visit_one = Visit.new(
     arrived: true
   }
 )
-visit_one.user = user_one
+visit_one.user = user_two
 visit_one.restaurant = restaurant_one
 visit_one.save!
 
@@ -166,28 +204,31 @@ visit_two = Visit.new(
     arrived: true
   }
 )
-visit_two.user = user_one
+visit_two.user = user_two
 visit_two.restaurant = restaurant_three
 visit_two.save!
 
 visit_three = Visit.new(
   {
     date: Date.today - 10,
-    feedback: "Long as always but wait time accurate.",
-    rating: 2,
+    feedback: "Waited close to 2 HOURS 🤡",
+    rating: 1,
     arrived: true
   }
 )
-visit_three.user = user_one
+visit_three.user = user_two
 visit_three.restaurant = restaurant_four
 visit_three.save!
 
 visit_four = Visit.new(
   {
-    date: Date.today - 14
+    date: Date.today - 14,
+    feedback: "20min wait not 10. Was double what I expected.",
+    rating: 1,
+    arrived: true
   }
 )
-visit_four.user = user_one
+visit_four.user = user_two
 visit_four.restaurant = restaurant_two
 visit_four.save!
 puts "Done."
@@ -195,23 +236,71 @@ puts "Done."
 visit_five = Visit.new(
   {
     date: Date.today - 7,
-    feedback: "Waited 25 min instead of 30 min.",
+    feedback: "Waited a little bit over an hour. As expected.",
     rating: 4,
     arrived: true
   }
 )
-visit_five.user = user_one
+visit_five.user = user_two
 visit_five.restaurant = restaurant_five
 visit_five.save!
 
 visit_six = Visit.new(
   {
     date: Date.today - 11,
-    feedback: "Waited exactly 20 min!",
+    feedback: "Waited exactly 15 min!",
     rating: 5,
     arrived: true
   }
 )
-visit_six.user = user_one
-visit_six.restaurant = restaurant_six
+visit_six.user = user_two
+visit_six.restaurant = restaurant_ten
 visit_six.save!
+
+visit_seven = Visit.new(
+  {
+    date: Date.today - 21,
+    feedback: "Quick queue. Wait time was spot on.",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_seven.user = user_two
+visit_seven.restaurant = restaurant_six
+visit_seven.save!
+
+visit_eight = Visit.new(
+  {
+    date: Date.today - 4,
+    feedback: "Waited approx 20min. Teeny bit faster than expected",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_eight.user = user_two
+visit_eight.restaurant = restaurant_seven
+visit_eight.save!
+
+visit_nine = Visit.new(
+  {
+    date: Date.today - 3,
+    feedback: "Always 10min wait. Great service and so quick to be seated ⚡️",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_nine.user = user_two
+visit_nine.restaurant = restaurant_eight
+visit_nine.save!
+
+visit_ten = Visit.new(
+  {
+    date: Date.today - 3,
+    feedback: "A long wait. Sadly did wait 60min.",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_ten.user = user_one
+visit_ten.restaurant = restaurant_nine
+visit_ten.save!
