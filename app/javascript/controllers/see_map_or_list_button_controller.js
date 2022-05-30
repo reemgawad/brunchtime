@@ -4,13 +4,13 @@ export default class extends Controller {
   static targets = ["map", "list"]
 
   connect() {
-    console.log("Hello from our first Stimulus controller youpi");
+    // console.log("Hello from our first Stimulus controller youpi");
   }
 
   show(event) {
     this.mapTarget.classList.toggle("d-none")
     this.listTarget.classList.toggle("d-none")
-    console.log(event)
+    // console.log(event)
     if (event.target.innerText == "See Map") {
       event.target.innerText = "See List"
     } else if (event.target.innerText == "See List") {
