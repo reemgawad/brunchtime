@@ -36,20 +36,24 @@
         <div data-refresh-list-target="restaurantsList" >
           <%= render 'list.html', restaurants: @restaurants %>
         </div>
+    </div>
 
+    <div id="map" style="height: 300px; width: 600px" class = "d-none" data-see-map-or-list-button-target="map">
+      <div style="width: 100%; height: 600px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-refresh-list-target="mapRefresh"
+        data-action="refresh-list:refreshMap->mapbox#refreshMapAjax">
       </div>
-          <div>
-            <button class="brunch-button" data-action="click->see-map-or-list-button#show">
-              See Map
-            </button>
-          </div>
-      <div id="map" style="height: 300px; width: 600px" class = "d-none" data-see-map-or-list-button-target="map">
-        <div style="width: 100%; height: 600px;"
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
+    <% end %>
+
+    <div data-refresh-list-target="restaurantsList" >
+      <%= render 'list.html', restaurants: @restaurants %>
     </div>
   </div>
+
+    <button class="btn" data-action="click->see-map-or-list-button#show">
+        See Map
+    </button>
 </div>
