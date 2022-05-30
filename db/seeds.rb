@@ -16,7 +16,7 @@ print "Seeding users..."
 user_one = User.create!(
   {
     email: "l@l.l",
-    first_name: "Lien",
+    first_name: "Philippine",
     password: "secret"
   }
 )
@@ -142,6 +142,21 @@ restaurant_eight = Restaurant.new(
 restaurant_eight.photo.attach(io: File.open('app/assets/images/ginko.jpeg'), filename: 'ginko.jpeg')
 restaurant_eight.save!
 
+restaurant_nine = Restaurant.new(
+  {
+    name: "Dandy",
+    address: "244 RUE ST JACQUES, MONTREAL",
+    description: "Chic restaurant serving all-day brunch, pizza & baked goods, plus coffee, cocktails & natural wines.",
+    price_range: "$$",
+    opening_hours: "10am-4pm",
+    phone_number: "514-289-9996",
+    wait_time: 60
+
+  }
+)
+restaurant_nine.photo.attach(io: File.open('app/assets/images/dandy.jpeg'), filename: 'dandy.jpeg')
+restaurant_nine.save!
+
 puts "Done."
 print "Seeding visits..."
 
@@ -173,8 +188,8 @@ visit_two.save!
 visit_three = Visit.new(
   {
     date: Date.today - 10,
-    feedback: "Long as always but wait time accurate.",
-    rating: 2,
+    feedback: "Long as always :( wait time is unfortunately accurate.",
+    rating: 5,
     arrived: true
   }
 )
@@ -215,3 +230,15 @@ visit_six = Visit.new(
 visit_six.user = user_one
 visit_six.restaurant = restaurant_six
 visit_six.save!
+
+visit_seven = Visit.new(
+  {
+    date: Date.today - 21,
+    feedback: "Waited close to 2 HOURS.",
+    rating: 2,
+    arrived: true
+  }
+)
+visit_seven.user = user_one
+visit_seven.restaurant = restaurant_six
+visit_seven.save!
