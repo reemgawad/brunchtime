@@ -19,16 +19,22 @@
     <p><span class="bold-text-restaurant-details">Opening Hours: </span><%= @restaurant.opening_hours %></p>
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
-    <div class="review-cards">
+    <div class="review-cards d-flex">
         <% @visits.each do |visit| %>
-        <p><%= visit.user.first_name %></p>
-          <p><span class="bold-text-restaurant-details">Accuracy Rating </span><%= visit.rating %></p>
-          <p><%= visit.feedback %></p>
-          <p><%= visit.date %></p>
-          <% if visit.user == current_user %>
-            <%= link_to "Edit feedback", edit_visit_path(visit), class: 'edit-feedback-link' %>
+          <div class="user-and-rating">
+            <div class="d-flex">
+              <p><span class="bold-text-restaurant-details"><%= visit.user.first_name %></span></p>
+              <p>Accuracy Rating: <%= visit.rating %></p>
+            </div>
+            <div class="review-feedback">
+              <p><%= visit.feedback %></p><br>
+            </div>
+          </div>
+          <div class="review-date"><p><%= visit.date %></p></div>
+            <% if visit.user == current_user %>
+              <%= link_to "Edit feedback", edit_visit_path(visit), class: 'edit-feedback-link' %>
+            <% end %>
           <% end %>
-        <% end %>
       <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
     </div>
 

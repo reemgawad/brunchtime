@@ -71,4 +71,19 @@
 .review-cards {
     background-color: $egg-whites;
     border-bottom: 1px solid grey;
+    margin-bottom: 15px;
+    height: 90px;
+}
+
+.user-and-rating {
+    padding: 10px;
+}
+
+.review-date {
+    width: 126px;
+    margin-top: 15px;
+}
+
+.review-feedback {
+    // margin-bottom: 10px;
 }
