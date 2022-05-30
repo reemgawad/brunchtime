@@ -4,9 +4,14 @@
   <div class="container">
     <h1><%= @restaurant.name%></h1><br>
     <p><span class="bold-text-restaurant-details">Wait-time: </span><%= @restaurant.wait_time %> min</p>
-    <p><span class="bold-text-restaurant-details">Accuracy Rating: </span></p><br>
-    <%# for line above: needs some logic to do this %>
-
+    <p><span class="bold-text-restaurant-details">
+    Accuracy Rating:
+      <% ratings = [] %>
+      <% @visits.each do |visit| %>
+        <% ratings << visit.rating %>
+      <% end %>
+        <%= (ratings.sum.to_f / ratings.size).round(1) %>
+    </span></p><br>
 
     <p><span class="bold-text-restaurant-details">Address: </span><%= @restaurant.address %></p>
     <p><span class="bold-text-restaurant-details">Description: </span><%= @restaurant.description %></p>
