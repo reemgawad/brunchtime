@@ -1,10 +1,10 @@
 .brunch-button {
-  background-color: $reem-green;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 8px 16px;
-  border: none;
+    background-color: $reem-green;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: none;
 }
 
 .brunch-button:hover {
@@ -23,4 +23,9 @@
 
 .back-to-list-button a:hover {
     color: #271705;
+    background-color: #00ab80;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 8px 16px;
 }
