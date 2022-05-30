@@ -3,17 +3,28 @@
     <h1 class="text-center mt-2">My Brunching Favorites</h1>
     <hr class="text-center w-25 m-auto border border-1 border-primary opacity-100">
   </div>
-</div>
+  <div class="row">
+    <% @favorites.each do |restaurant|  %>
+    <div class=" d-flex justify-content-center">
+      <div class="card-product justify-content-between">
 
+        <div>
+          <img src= "<%= cl_image_path (restaurant.photo.key)%>">
+        </div>
 
-<% @favorites.each do |restaurant|  %>
-  <div>
-    <p><%= restaurant.name %></p>
-    <p><%= restaurant.address %></p>
-    <div data-controller="toggle-favorite">
-    <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
-      <%= render 'like_button', restaurant: restaurant %>
-    <% end %>
+        <div>
+          <p class="font-weight-bold"><%= restaurant.name %></p>
+          <p><%= restaurant.address %></p>
+        </div>
+
+        <div data-controller="toggle-favorite" class="favorite-logo">
+          <%= link_to toggle_favorite_restaurant_path(restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
+            <%= render 'like_button', restaurant: restaurant %>
+          <% end %>
+        </div>
+
+      </div>
     </div>
+    <% end %>
   </div>
-<% end %>
+</div>

@@ -1,13 +1,35 @@
-<h1>My Brunching History</h1>
+<div class ="container">
+  <div class="row">
+    <h1 class="text-center mt-2">My Brunching History</h1>
+    <hr class="text-center w-25 m-auto border border-1 border-primary opacity-100">
+  </div>
 
-<% @visits.each do |visit| %>
-  <h3><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
-  <%= visit.date %>
-  <%= visit.restaurant.address %>
-  <%= visit.restaurant.wait_time %>
-  <%= visit.rating %>
-  <%= visit.feedback %>
-  <%= link_to 'Take me there again!', restaurant_path(visit.restaurant) %>
-<% end %>
+  <div class="row">
+    <% @visits.each do |visit| %>
+      <div class=" d-flex justify-content-center">
+        <div class="card-product justify-content-between">
+          <div>
+            <img src= "<%= cl_image_path (visit.restaurant.photo.key)%>">
+          </div>
+
+          <div>
+            <h3><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
+            <%= visit.date %>
+            <%= visit.restaurant.address %>
+            <%= visit.restaurant.wait_time %>
+            <%= visit.rating %>
+            <%# <%= visit.feedback %> %>
+          </div>
+
+          <div>
+              <%= link_to 'Take me there again!', restaurant_path(visit.restaurant) %>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 <%= link_to 'Home', restaurants_path %>
