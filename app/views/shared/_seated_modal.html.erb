@@ -9,17 +9,19 @@
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
      aria-hidden="true" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 5px; background-color: #FDF8E1; border: 1px solid #FAE588">
+      <div class="modal-header" style="border: none">
         <h5 class="modal-title" id="staticBackdropLabel">Are you seated at <%= @visit.restaurant.name %>?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <%= link_to "Yes", visit_arrived_path(@visit), class: "btn btn-primary" %>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                data-seated-alert-target="noButton" data-action="click->seated-alert#connect">No</button>
-        <%= link_to "I'm not going", visit_path(@visit), method: :delete %>
+      <div class="modal-footer d-flex justify-content-center" style="border: none">
+        <%= link_to "Yes", visit_arrived_path(@visit), class: "brunch-button", style: "width: 85px; text-align: center" %>
+        <button type="button" class="brunch-button" data-bs-dismiss="modal"
+                data-seated-alert-target="noButton" data-action="click->seated-alert#connect">Not yet</button>
+      </div>
+      <div class="text-center">
+        <p><%= link_to "I'm not going", visit_path(@visit), method: :delete, class: "brown-link" %></p>
       </div>
     </div>
   </div>
