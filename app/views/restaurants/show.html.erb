@@ -14,17 +14,19 @@
     <p><span class="bold-text-restaurant-details">Opening Hours: </span><%= @restaurant.opening_hours %></p>
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
-    <h2>Feedback from Brunchers</h2>
-      <% @visits.each do |visit| %>
-        <p><span class="bold-text-restaurant-details">Accuracy Rating: </span><%= visit.rating %></p>
-        <p><span class="bold-text-restaurant-details">Comment: </span><%= visit.feedback %></p>
-
-        <p><span class="bold-text-restaurant-details">Date Visited:</span> <%= visit.date %></p>
-        <% if visit.user == current_user %>
-          <%= link_to "Edit feedback", edit_visit_path(visit), class: 'edit-feedback-link' %>
+    <div class="review-cards">
+        <% @visits.each do |visit| %>
+        <p><%= visit.user.first_name %></p>
+          <p><span class="bold-text-restaurant-details">Accuracy Rating </span><%= visit.rating %></p>
+          <p><%= visit.feedback %></p>
+          <p><%= visit.date %></p>
+          <% if visit.user == current_user %>
+            <%= link_to "Edit feedback", edit_visit_path(visit), class: 'edit-feedback-link' %>
+          <% end %>
         <% end %>
-      <% end %>
-    <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
+      <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
+    </div>
+
     <div class="show-page-bottom-page-links">
       <div>
         <%= simple_form_for [ @restaurant, @visit ] do |f| %>
