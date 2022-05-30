@@ -29,6 +29,22 @@ user_two = User.create!(
   }
 )
 
+user_three = User.create!(
+  {
+    email: "r@r.r",
+    first_name: "Reem",
+    password: "secret"
+  }
+)
+
+user_four = User.create!(
+  {
+    email: "g@g.g",
+    first_name: "Gwladys",
+    password: "secret"
+  }
+)
+
 print "Seeding restaurants..."
 # Restaurants
 restaurant_one = Restaurant.new(
@@ -192,7 +208,7 @@ visit_one = Visit.new(
     arrived: true
   }
 )
-visit_one.user = user_two
+visit_one.user = user_four
 visit_one.restaurant = restaurant_one
 visit_one.save!
 
@@ -204,7 +220,7 @@ visit_two = Visit.new(
     arrived: true
   }
 )
-visit_two.user = user_two
+visit_two.user = user_three
 visit_two.restaurant = restaurant_three
 visit_two.save!
 
@@ -228,7 +244,7 @@ visit_four = Visit.new(
     arrived: true
   }
 )
-visit_four.user = user_two
+visit_four.user = user_four
 visit_four.restaurant = restaurant_two
 visit_four.save!
 puts "Done."
@@ -241,7 +257,7 @@ visit_five = Visit.new(
     arrived: true
   }
 )
-visit_five.user = user_two
+visit_five.user = user_three
 visit_five.restaurant = restaurant_five
 visit_five.save!
 
@@ -265,7 +281,7 @@ visit_seven = Visit.new(
     arrived: true
   }
 )
-visit_seven.user = user_two
+visit_seven.user = user_four
 visit_seven.restaurant = restaurant_six
 visit_seven.save!
 
@@ -277,7 +293,7 @@ visit_eight = Visit.new(
     arrived: true
   }
 )
-visit_eight.user = user_two
+visit_eight.user = user_three
 visit_eight.restaurant = restaurant_seven
 visit_eight.save!
 
