@@ -1,34 +1,40 @@
-<h1>All restaurants</h1>
-
-  <div class="d-flex justify-content-between" data-controller="refresh-list see-map-or-list-button">
+<div class="background">
+  <div class="d-flex justify-content-center" data-controller="refresh-list see-map-or-list-button">
     <div data-see-map-or-list-button-target="list">
       <div>
-        <%= form_tag restaurants_path, method: :get, class: 'mb-5', data: { refresh_list_target: 'form' } do %>
-          <div class="search-form-control form-group d-flex"  style="width: 600px; margin: 0 auto;">
-            <%= text_field_tag :location,
-              params[:location],
-              class: "form-control",
-              placeholder: "Search locations...",
-              data: {
-                refresh_list_target: 'searchInput',
-                action: "keyup->refresh-list#update",
-              } %>
+        <div>
+          <%= form_tag restaurants_path, method: :get, class: 'mb-5', data: { refresh_list_target: 'form' } do %>
+            <div class="search-form-control form-group d-flex"  style="width: 600px; margin: 0 auto;">
+              <%= text_field_tag :location,
+                params[:location],
+                class: "form-control",
+                placeholder: "Search locations...",
+                data: {
+                  refresh_list_target: 'searchInput',
+                  action: "keyup->refresh-list#update",
+                } %>
               <div data-refresh-list-target="list"></div>
-            <%= submit_tag "Find", class: "btn btn-success" %>
-          </div>
-      </div>
+              <%= submit_tag "Find", class: "brunch-button" %>
+            </div>
+            </div>
 
-      <h6> Search by: </h6>
-        <div class="search-form-control form-group d-flex" style="width: 600px; margin: 0 auto;">
-          <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
-            <option value="">Select</option>
-            <option value="5"> less < 5</option>
-            <option value="10"> less < 10</option>
-            <option value="15"> less < 15</option>
-            <option value="30"> less < 30</option>
-            <option value="60">less < 60</option>
-            <%= submit_tag "Filter", class: "btn btn-success" %>
-          </select>
+            <h6> Search by: </h6>
+            <div class="search-form-control form-group d-flex" style="width: 600px; margin: 0 auto;">
+              <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
+                <option value="">Select</option>
+                <option value="5"> less < 5</option>
+                <option value="10"> less < 10</option>
+                <option value="15"> less < 15</option>
+                <option value="30"> less < 30</option>
+                <option value="60">less < 60</option>
+                <%= submit_tag "Filter", class: "brunch-button" %>
+              </select>
+            </div>
+          <% end %>
+        </div>
+
+        <div data-refresh-list-target="restaurantsList" >
+          <%= render 'list.html', restaurants: @restaurants %>
         </div>
     </div>
 
@@ -40,23 +46,13 @@
         data-refresh-list-target="mapRefresh"
         data-action="refresh-list:refreshMap->mapbox#refreshMapAjax">
       </div>
-    <% end %>
 
     <div data-refresh-list-target="restaurantsList" >
       <%= render 'list.html', restaurants: @restaurants %>
     </div>
   </div>
 
-  <div id="map" style="height: 300px; width: 600px" class = "d-none" data-see-map-or-list-button-target="map">
-    <div style="width: 100%; height: 600px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-
     <button class="btn" data-action="click->see-map-or-list-button#show">
         See Map
     </button>
-
 </div>
