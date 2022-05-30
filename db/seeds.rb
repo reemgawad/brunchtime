@@ -15,8 +15,16 @@ print "Seeding users..."
 # users
 user_one = User.create!(
   {
-    email: "l@l.l",
+    email: "p@p.p",
     first_name: "Philippine",
+    password: "secret"
+  }
+)
+
+user_two = User.create!(
+  {
+    email: "l@l.l",
+    first_name: "Lien",
     password: "secret"
   }
 )
@@ -184,7 +192,7 @@ visit_one = Visit.new(
     arrived: true
   }
 )
-visit_one.user = user_one
+visit_one.user = user_two
 visit_one.restaurant = restaurant_one
 visit_one.save!
 
@@ -196,7 +204,7 @@ visit_two = Visit.new(
     arrived: true
   }
 )
-visit_two.user = user_one
+visit_two.user = user_two
 visit_two.restaurant = restaurant_three
 visit_two.save!
 
@@ -208,7 +216,7 @@ visit_three = Visit.new(
     arrived: true
   }
 )
-visit_three.user = user_one
+visit_three.user = user_two
 visit_three.restaurant = restaurant_four
 visit_three.save!
 
@@ -220,7 +228,7 @@ visit_four = Visit.new(
     arrived: true
   }
 )
-visit_four.user = user_one
+visit_four.user = user_two
 visit_four.restaurant = restaurant_two
 visit_four.save!
 puts "Done."
@@ -233,7 +241,7 @@ visit_five = Visit.new(
     arrived: true
   }
 )
-visit_five.user = user_one
+visit_five.user = user_two
 visit_five.restaurant = restaurant_five
 visit_five.save!
 
@@ -245,7 +253,7 @@ visit_six = Visit.new(
     arrived: true
   }
 )
-visit_six.user = user_one
+visit_six.user = user_two
 visit_six.restaurant = restaurant_ten
 visit_six.save!
 
@@ -257,7 +265,7 @@ visit_seven = Visit.new(
     arrived: true
   }
 )
-visit_seven.user = user_one
+visit_seven.user = user_two
 visit_seven.restaurant = restaurant_six
 visit_seven.save!
 
@@ -269,7 +277,7 @@ visit_eight = Visit.new(
     arrived: true
   }
 )
-visit_eight.user = user_one
+visit_eight.user = user_two
 visit_eight.restaurant = restaurant_seven
 visit_eight.save!
 
@@ -281,7 +289,7 @@ visit_nine = Visit.new(
     arrived: true
   }
 )
-visit_nine.user = user_one
+visit_nine.user = user_two
 visit_nine.restaurant = restaurant_eight
 visit_nine.save!
 
