@@ -28,8 +28,12 @@ class RestaurantsController < ApplicationController
     # implementing ajax in search
     respond_to do |format|
       format.html
-      format.text { render partial: 'list.html', locals: { restaurants: @restaurants } }
-      # format.json { render json: { restaurants: "lalala" } }
+      format.json do
+        render json: {
+          restaurants: render_to_string('restaurants/_list.html', layout: false, locals: { restaurants: @restaurants }),
+          markers: @markers.to_json
+        }
+      end
     end
   end
 

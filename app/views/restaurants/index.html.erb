@@ -1,7 +1,7 @@
 <h1>All restaurants</h1>
 
 
-  <div class="d-flex justify-content-between" data-controller="refresh-list see-map-or-list-button"">
+  <div class="d-flex justify-content-between" data-controller="refresh-list see-map-or-list-button">
     <div data-see-map-or-list-button-target="list">
       <div>
         <%= form_tag restaurants_path, method: :get, class: 'mb-5', data: { refresh_list_target: 'form' } do %>
@@ -43,7 +43,9 @@
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        data-refresh-list-target="mapRefresh">
+        data-refresh-list-target="mapRefresh"
+        data-action="refresh-list:refreshMap->mapbox#refreshMapAjax">
+
       </div>
     </div>
 
