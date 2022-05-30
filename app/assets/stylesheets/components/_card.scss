@@ -74,15 +74,12 @@
     border-bottom: 1px solid grey;
     margin-bottom: 15px;
     height: 90px;
-}
-
-.user-and-rating {
-    padding: 10px;
+    position: relative;
 }
 
 .review-date {
-    width: 126px;
-    margin-top: 15px;
+    max-width: 126px;
+    text-align: end;
 }
 
 .accuracy-rating p {

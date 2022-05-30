@@ -19,9 +19,9 @@
     <p><span class="bold-text-restaurant-details">Opening Hours: </span><%= @restaurant.opening_hours %></p>
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
-    <div class="review-cards d-flex">
         <% @visits.each do |visit| %>
-          <div class="user-and-rating">
+          <div class="review-cards d-flex justify-content-between align-items-top p-2">
+          <div>
             <div class="d-flex">
               <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
               <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
@@ -34,9 +34,9 @@
             <% if visit.user == current_user %>
               <%= link_to "Edit feedback", edit_visit_path(visit), class: 'edit-feedback-link' %>
             <% end %>
+          </div>
           <% end %>
       <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
-    </div>
 
     <div class="show-page-bottom-page-links">
       <div>
