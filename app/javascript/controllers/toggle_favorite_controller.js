@@ -1,11 +1,12 @@
 import { Controller } from "stimulus"
 
+
 export default class extends Controller {
-    static targets = ["output"]
+    static targets = ["output", "svgPath"]
 
     connect() {}
 
     toggle(event) {
-        event.target.classList.toggle('text-danger')
+        this.svgPathTarget.classList.toggle('liked')
     }
 }
