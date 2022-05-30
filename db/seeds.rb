@@ -29,16 +29,9 @@ restaurant_one = Restaurant.new(
     address: "2613 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Straightforward eatery serving health-conscious brunch, smoothies & cocktails, plus vegan options.",
     price_range: "$$",
-    opening_hours: "Monday: 9am-4pm,
-    Tuesday: 9am-4pm,
-    Wednesday: 9am-4pm,
-    Thursday: 9am-4pm,
-    Friday: 9am-4pm,
-    Saturday: 9am-4pm,
-    Sunday: 9am-4pm",
+    opening_hours: "9am-6pm",
     phone_number: "514-379-6455",
     wait_time: 15
-
   }
 )
 restaurant_one.photo.attach(io: File.open('app/assets/images/barley.jpeg'), filename: 'barley.jpeg')
@@ -50,13 +43,7 @@ restaurant_two = Restaurant.new(
     address: "2745 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Creative egg dishes, crêpes & French toast in a trendy space with art on the walls.",
     price_range: "$$",
-    opening_hours: "Monday: 7:30am-2:30pm,
-    Tuesday:	7am-2pm,
-    Wednesday:	7am-2pm,
-    Thursday:	7am-2:30pm,
-    Friday:	7am-2:30pm,
-    Saturday:	8am-2:45pm,
-    Sunday:	8am-2:45pm",
+    opening_hours: "7:30am-6:30pm",
     phone_number: "514-931-3999",
     wait_time: 10
 
@@ -71,13 +58,7 @@ restaurant_three = Restaurant.new(
     address: "3612 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Buzzy locale with graffiti-scrawled walls known for its imaginative brunch plates & huge smoothies.",
     price_range: "$$",
-    opening_hours: "Monday 9am-2:30pm,
-    Tuesday: Closed,
-    Wednesday: 9am-2:30pm,
-    Thursday: 9am-2:30pm,
-    Friday: 9am-2:30pm,
-    Saturday: 9am-2:30pm,
-    Sunday: 9am-2:30pm",
+    opening_hours: "9am-7:30pm",
     phone_number: "514-524-6663",
     wait_time: 15
 
@@ -92,13 +73,7 @@ restaurant_four = Restaurant.new(
     address: "4621 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Traditional Jewish deli serving breakfast & sandwiches in a bright, stylish space.",
     price_range: "$$",
-    opening_hours: "Monday: 9am-3pm,
-    Tuesday:	Closed,
-    Wednesday:	9am-3pm,
-    Thursday:	9am-3pm,
-    Friday:	9am-3pm,
-    Saturday:	9am-4pm,
-    Sunday:	9aam-4pm",
+    opening_hours: "9am-5pm",
     phone_number: "514-757-5190",
     wait_time: 5
 
@@ -113,13 +88,7 @@ restaurant_five = Restaurant.new(
     address: "3001 RUE NOTRE-DAME OUEST, MONTREAL",
     description: "Stylish, contemporary haunt serving gourmet regional fare & brunch, plus cocktails & milkshakes.",
     price_range: "$$$",
-    opening_hours: "Monday: 6pm-11pm,
-    Tuesday: 6pm-11pm,
-    Wednesday: 6pm-11pm,
-    Thursday:	6pm-11:30pm,
-    Friday:	10am-2:30pm  6pm-11:30pm,
-    Saturday:	9:30am-3pm 6pm-11:45pm,
-    Sunday:	9:30am-3pm  6pm-11pm",
+    opening_hours: "6pm-11pm",
     phone_number: "438-387-4252",
     wait_time: 60
 
@@ -134,13 +103,7 @@ restaurant_six = Restaurant.new(
     address: "1524 RUE NOTRE-DAME OUEST, MONTREAL, QC",
     description: "Classic, rustic charming place serving baked goods, brunch and hot beverages.",
     price_range: "$$",
-    opening_hours: "Monday: 8am-4pm,
-    Tuesday:	8am-4pm,
-    Wednesday:	8am-4pm,
-    Thursday:	8am-4pm,
-    Friday:	8am-4pm,
-    Saturday:	9am-4pm,
-    Sunday:	9am-4pm",
+    opening_hours: "8am-4pm",
     phone_number: "514-933-1412",
     wait_time: 20
 
@@ -155,13 +118,7 @@ restaurant_seven = Restaurant.new(
     address: "1310 BOUL DE MAISONNEUVE EST, MONTREAL",
     description: "Petite corner bistro for French brunch featuring refined seasonal egg dishes, crêpes & sandwiches.",
     price_range: "$$$",
-    opening_hours: "Monday: 9am-2:30pm,
-    Tuesday:	9am-2:30pm,
-    Wednesday:	9am-2:30pm,
-    Thursday:	9am-2:30pm,
-    Friday:	9am-2:30pm,
-    Saturday:	9am-4pm,
-    Sunday:	9am-4pm",
+    opening_hours: "9am-2:30pm",
     phone_number: "514-933-1412",
     wait_time: 25
 
@@ -176,13 +133,7 @@ restaurant_eight = Restaurant.new(
     address: "308 RUE STE-CATHERINE EST, MONTREAL",
     description: "Popular brunch spot serving eclectic Canadian fare in a chic, open room with lots of natural light.",
     price_range: "$$",
-    opening_hours: "Monday: 7am-9pm,
-    Tuesday:	7am-10pm,
-    Wednesday:	7am-10pm,
-    Thursday:	7am-10pm,
-    Friday:	7am-10pm,
-    Saturday:	8am-3pm,
-    Sunday:	8am-3pm",
+    opening_hours: "7am-9pm",
     phone_number: "514-379-4449",
     wait_time: 10
 
