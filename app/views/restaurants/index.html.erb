@@ -1,5 +1,5 @@
-<div class="background">
-  <div class="d-flex justify-content-center" data-controller="refresh-list see-map-or-list-button">
+<div class="background" data-controller="see-map-or-list-button">
+  <div class="d-flex justify-content-center" data-controller="refresh-list">
     <div data-see-map-or-list-button-target="list">
       <div>
         <div>
@@ -46,7 +46,7 @@
         data-action="refresh-list:refreshMap->mapbox#refreshMapAjax">
       </div>
 
-    <div data-refresh-list-target="restaurantsList" >
+    <div data-refresh-list-target="restaurantsList" class = "d-none" >
       <%= render 'list.html', restaurants: @restaurants %>
     </div>
   </div>
