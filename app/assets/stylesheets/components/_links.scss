@@ -10,6 +10,9 @@
 .edit-feedback-link {
     text-decoration: none;
     color: $hash-brown;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
 }
 
 .edit-feedback-link a:hover {
