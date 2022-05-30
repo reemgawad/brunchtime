@@ -13,4 +13,11 @@ p {
 
 .egg-container {
   position: relative;
+
+  img {
+    position: absolute;
+    right: -35px;
+    bottom: -430px;
+    width: 300px
+  }
 }
