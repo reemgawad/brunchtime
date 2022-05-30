@@ -1,10 +1,8 @@
 <% if notice %>
-  <div class="d-flex align-items-center">
-    <div class="alert alert-info alert-dismissible fade show m-1 center-block" role="alert">
-      <%= notice %>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-      </button>
-    </div>
+  <div class="alert alert-info alert-dismissible alert-centered fade show m-1" role="alert">
+    <h2><%= notice %></h2>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
   </div>
 <% end %>
 <% if alert %>
