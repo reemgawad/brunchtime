@@ -7,14 +7,18 @@
     color: #271705;
 }
 
+// this below is an icon
 .edit-feedback-link {
     text-decoration: none;
-    color: $hash-brown;
+    color: #58370E;
     position: absolute;
     right: 0.5rem;
     bottom: 0.5rem;
+    text-align: right;
+    font-style: italic;
+    text-decoration: underline;
 }
 
-.edit-feedback-link a:hover {
+.edit-feedback-link i:hover {
     color: #271705;
 }
