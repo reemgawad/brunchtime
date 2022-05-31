@@ -5,11 +5,10 @@
     <h1><%= @restaurant.name%></h1><br>
     <p><span class="bold-text-restaurant-details">Wait-time: </span><%= @restaurant.wait_time %> min</p>
     <p><span class="bold-text-restaurant-details">
-
     Accuracy Rating: </span>
       <% ratings = [] %>
       <% @visits.each do |visit| %>
-        <% ratings << visit.rating unless visit.rating.nil? %>
+        <% ratings << visit.rating %>
       <% end %>
       <%= (ratings.sum.to_f / ratings.size).round(1) %>
     </p><br>
@@ -33,7 +32,9 @@
           </div>
           <div class="review-date col-4"><p><%= visit.date %></p></div>
             <% if visit.user == current_user %>
-              <%= link_to "Edit feedback", edit_visit_path(visit), class: 'edit-feedback-link' %>
+              <%= link_to edit_visit_path(visit), class: 'edit-feedback-link' do %>
+              <i class="fas fa-edit"></i>
+              <% end %>
             <% end %>
           </div>
           <% end %>
