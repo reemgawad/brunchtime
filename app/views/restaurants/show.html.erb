@@ -1,5 +1,21 @@
 <div class="show-body">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @restaurant.photo.key, height: 500, crop: :fill if @restaurant.photo.attached? %>')">
+  <div class="card-category d-flex justify-content-end align-items-end pb-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @restaurant.photo.key, height: 500, crop: :fill if @restaurant.photo.attached? %>')">
+  <div data-controller="toggle-favorite">
+          <%= link_to toggle_favorite_restaurant_path(@restaurant), remote: true, method: :post, data: { action: "click->toggle-favorite#toggle" } do %>
+            <div class="like-icon mx-2 align-self-end"   data-id="<%= @restaurant.id %>">
+                <svg id="Layer_1" enable-background="new 0 0 512 512" height="'50'" viewBox="0 0 512 512" width="50" xmlns="http://www.w3.org/2000/svg">
+                <path data-toggle-favorite-target="svgPath2" class="egg-heart-shade <%= 'liked' if !current_user.nil? && current_user.favorited?(@restaurant) %>" d="m496 189.981c0 118.96-126.75 218.71-196.03 264.34-26.68 17.58-61.26 17.58-87.94 0-90.163-59.344-196.03-155.893-196.03-264.34 0-80.37 57.3-145.51 128-145.51 32.13 0 61.5 13.45 83.97 35.68 15.46 15.3 40.6 15.3 56.06 0 22.47-22.23 51.84-35.68 83.97-35.68 72.376 0 128 67.061 128 145.51z" />
+                <path data-toggle-favorite-target="svgPath" class="egg-heart <%= 'liked' if !current_user.nil? && current_user.favorited?(@restaurant) %>" d="m291.97 412.471c-26.68 17.57-61.26 17.57-87.94 0-75.034-49.421-160.891-124.545-187.6-210.64-6.132-83.153 51.554-157.36 127.57-157.36 32.13 0 61.5 13.45 83.97 35.68 15.46 15.3 40.6 15.3 56.06 0 67.391-66.671 172.295-35.859 203.68 58.2 6.59 112.072-101.992 212.361-195.74 274.12z"   />
+                <path d="m384 249.651c0 57.44-46.56 104-104 104s-104-46.56-104-104c0-57.561 46.681-104 104-104 57.336 0 104 46.457 104 104z" fill="#efd66c"/>
+                <path d="m381.22 225.651c-10.84 45.87-52.04 80-101.22 80s-90.38-34.13-101.22-80c10.84-45.87 52.04-80 101.22-80s90.38 34.13 101.22 80z" fill="#ffe773"/>
+                <path d="m203.224 467.687c-95.437-62.868-203.224-162.939-203.224-277.706 0-86.281 61.782-161.507 144-161.507 35.131 0 68.949 14.314 95.226 40.307 9.249 9.147 24.299 9.148 33.55 0 26.748-26.46 61.652-41.218 98.896-40.245 79.836 2.266 140.328 75.723 140.328 161.445 0 125.147-127.326 227.709-203.224 277.706-32.059 21.118-73.491 21.12-105.552 0zm-171.224-277.706c0 102.033 103.784 194.963 188.827 250.983 21.367 14.074 48.979 14.074 70.346 0 84.908-55.933 188.827-148.884 188.827-250.983 0-69.298-48.371-129.507-112-129.507-26.648 0-52.475 11.03-72.722 31.057-21.658 21.422-56.899 21.422-78.556 0-72.015-71.232-184.722-12.291-184.722 98.45z" />
+                <path d="m280 369.651c-66.168 0-120-53.832-120-120s53.832-120 120-120 120 53.832 120 120-53.832 120-120 120zm0-208c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88z"/>
+                <path d="m336 265.651c-8.837 0-16-7.164-16-16 0-22.056-17.944-40-40-40-8.837 0-16-7.164-16-16s7.163-16 16-16c39.701 0 72 32.299 72 72 0 8.837-7.163 16-16 16z" fill="#f9f9f9"/>
+
+                </svg>
+            </div>
+            <% end %>
+          </div>
   </div>
   <div class="container">
 
