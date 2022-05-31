@@ -8,22 +8,35 @@
 }
 
 .brunch-button:hover {
-  background-color: #00ab80;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 8px 16px;
-}
-
-// links
-.back-to-list-button a {
-    text-decoration: none;
-    color: $hash-brown;
-}
-
-.back-to-list-button a:hover {
-    color: #271705;
+    background-color: #00ab80;
+    color: white;
     border-radius: 5px;
     text-decoration: none;
     padding: 8px 16px;
+}
+
+// reviews button on show page
+.btn-secondary {
+    background-color: $secondary;
+    color: $reem-green;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 286px;
+}
+
+//override secondary button visited color
+.btn-check:checked+.btn-secondary,
+.btn-check:active+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary.active,
+.show>.btn-secondary.dropdown-toggle {
+    color: $reem-green;
+    background-color: white;
+    border-color: white;
+}
+
+.btn-secondary:hover {
+    color: $reem-green;
+    background-color: white;
+    border-color: white;
 }
