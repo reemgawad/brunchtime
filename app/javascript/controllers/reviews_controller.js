@@ -8,6 +8,6 @@ export default class extends Controller {
         this.reviewsListTarget.classList.toggle('d-none')
     }
     connect() {
-        console.log("Hi")
+        // console.log("Hi")
     }
 }
