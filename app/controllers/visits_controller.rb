@@ -25,6 +25,8 @@ class VisitsController < ApplicationController
     # @visit.user = current_user
 
     if @visit.update(visit_params)
+      @restaurant.update_avg_rating
+      @restaurant.save
       flash[:notice] = "Thank you!"
       redirect_to restaurant_path(@restaurant)
     else

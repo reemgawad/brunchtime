@@ -11,4 +11,9 @@ class Restaurant < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def update_avg_rating
+    ratings = visits.map(&:rating).compact
+    self.avg_rating = ratings.sum.to_f / ratings.size unless ratings.size.zero?
+  end
 end
