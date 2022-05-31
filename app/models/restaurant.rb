@@ -14,6 +14,6 @@ class Restaurant < ApplicationRecord
 
   def update_avg_rating
     ratings = visits.map(&:rating).compact
-    self.avg_rating = ratings.sum / ratings.size
+    self.avg_rating = ratings.sum / ratings.size unless ratings.size.zero?
   end
 end

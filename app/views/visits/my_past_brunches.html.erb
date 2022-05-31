@@ -7,23 +7,17 @@
   <div class="row">
     <% @visits.each do |visit| %>
       <div class=" d-flex justify-content-center">
-        <div class="card-product justify-content-between">
-
-          <div class="me-3">
-            <img src= "<%= cl_image_path (visit.restaurant.photo.key)%>">
-          </div>
+        <div class="card-product justify-content-between" style="height: max-content; padding: 6px">
 
           <div>
             <h3 class="fs-6"><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
-            <p>On <%= visit.date.strftime("%A %b %d") %></p>
-            <p> <%= visit.restaurant.address %></p>
-           <%# <p>Wait time average :</p> %>
+            <p style="font-style: italic; font-size: 12px;">On <%= visit.date.strftime("%A %b %d") %></p>
+            <p style="font-size: 12px;">Wait time average: <%= visit.restaurant.wait_time %> min</p>
+
           </div>
 
           <div class="p-2 align-items-center">
-            <p class="back-to-list-button d-flex align-items-center">
-             <%= link_to 'Take me there again!', restaurant_path(visit.restaurant)%>
-            </p>
+             <%= link_to 'Go again →', restaurant_path(visit.restaurant)%>
           </div>
 
         </div>

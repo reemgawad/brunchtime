@@ -11,7 +11,7 @@
     <p>
     <%= image_tag("star.png", :alt => "star icon", size: "20x19") %>
     Accuracy Rating: </span>
-    <%= @restaurant.avg_rating %>
+    <%= @restaurant.avg_rating unless @restaurant.avg_rating.zero? %>
     </p>
 
     <p><span class="bold-text-restaurant-details">Address: </span><%= @restaurant.address %></p>
