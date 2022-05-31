@@ -13,5 +13,6 @@ select:focus {
 }
 
 .focus-class:focus-visible {
-  outline: 5px solid $sunnyside-up-yellow;
+  border: none;
+  outline: 3px solid $sunnyside-up-yellow;
 }
