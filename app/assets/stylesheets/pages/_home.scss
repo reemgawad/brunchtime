@@ -13,11 +13,12 @@ p {
 
 .egg-container {
   position: relative;
-
-  img {
-    position: absolute;
-    right: -35px;
-    bottom: -430px;
-    width: 300px
-  }
+  height: 500px;
+  background-image: url('/assets/bkgd_egg-1f31281a2b0b10f0cf6d54917921489ccfd55bc84bdfe3e323d2a6bae2dce1ba.png');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position-x: 120%;
+  background-position-y: 92%;
+  background-attachment: fixed;
+  overflow: visible;
 }
