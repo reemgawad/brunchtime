@@ -44,7 +44,11 @@
             <div class="col-8">
               <div class="d-flex">
                 <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
-                <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
+                <div class="my-0 py-0 d-flex align-items-center">
+                      <% visit.rating.times do  %>
+                          <%= image_tag("star.png", :alt => "star icon", size: "15x15") %>
+                      <% end %>
+                </div>
               </div>
               <div>
                 <p class="feedback"><%= visit.feedback %></p><br>
