@@ -8,21 +8,19 @@
     <% @visits.each do |visit| %>
       <div class=" d-flex justify-content-center">
         <div class="card-product justify-content-between">
-          <div>
+          <div class="me-3">
             <img src= "<%= cl_image_path (visit.restaurant.photo.key)%>">
           </div>
 
           <div>
-            <h3><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
-            <%= visit.date %>
-            <%= visit.restaurant.address %>
-            <%= visit.restaurant.wait_time %>
-            <%= visit.rating %>
-            <%# <%= visit.feedback %> %>
+            <h3 class="fs-6"><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
+            <p><%= visit.date %></p>
+            <p> <%= visit.restaurant.address %></p>
+           <p>Wait time average :</p>
           </div>
 
-          <div>
-              <%= link_to 'Take me there again!', restaurant_path(visit.restaurant) %>
+          <div class="back-to-list-button fs-6" >
+              <%= link_to 'Take me there again!', restaurant_path(visit.restaurant)%>
           </div>
 
         </div>
