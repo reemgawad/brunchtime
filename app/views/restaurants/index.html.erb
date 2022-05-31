@@ -7,7 +7,7 @@
             <div class="search-form-control form-group d-flex"  style="width: 220px">
               <%= text_field_tag :location,
                 params[:location],
-                class: "form-control color small-font",
+                class: "form-control color form-style",
                 placeholder: "Search locations...",
                 data: {
                   refresh_list_target: 'searchInput',
@@ -18,8 +18,8 @@
             </div>
             </div>
 
-            <div class="search-form-control form-group small-font" style="width: 100px;">
-              <select class="text-muted" name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
+            <div class="search-form-control form-group form-style" style="width: 100px;">
+              <select class="text-muted focus-class" name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
                 <option value="">Wait time</option>
                 <option class="fs-4" value="5"> Up to 5min </option>
                 <option value="10"> Up to 10min </option>

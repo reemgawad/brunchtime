@@ -35,7 +35,8 @@
 
     <div class="dropdown d-flex justify-content-center mb-3" data-controller="reviews">
       <button class="btn btn-secondary" type="button" data-action="click->reviews#dropdown">
-        Reviews
+        <span>Reviews</span>
+        <%# <i class="fas fa-chevron-down"></i> %>
       </button>
       <ul class="reviews-list d-none" data-reviews-target="reviewsList">
         <li><% @visits.each do |visit| %>

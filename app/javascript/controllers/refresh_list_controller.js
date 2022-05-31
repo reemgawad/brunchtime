@@ -18,6 +18,7 @@ export default class extends Controller {
       this.dispatch('refreshMap', {
         target: this.mapRefreshTarget
       })
+      // this.timeTarget.blur()
     })
   }
 }
