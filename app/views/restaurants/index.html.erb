@@ -14,19 +14,19 @@
                   action: "keyup->refresh-list#update",
                 } %>
               <div data-refresh-list-target="list"></div>
-              <%= submit_tag "Find", class: "brunch-button" %>
+              <%= submit_tag "Find", class: "brunch-button d-none" %>
             </div>
             </div>
 
             <div class="search-form-control form-group d-flex" style="width: 350px; margin: 0 auto;">
               <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
-                <option value="">Select</option>
+                <option value="">Wait time</option>
                 <option class="fs-4" value="5"> 5min or less </option>
                 <option value="10"> 10min or less </option>
                 <option value="15"> 15min or less </option>
                 <option value="30"> 30min or less </option>
                 <option value="60"> 60min or less </option>
-                <%= submit_tag "Filter", class: "brunch-button" %>
+                <%= submit_tag "Filter", class: "brunch-button d-none" %>
               </select>
             </div>
           <% end %>
