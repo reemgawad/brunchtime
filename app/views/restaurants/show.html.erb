@@ -5,7 +5,7 @@
     <h1><%= @restaurant.name%></h1><br>
     <p><%= image_tag("clock.png", :alt => "clock icon", size: "20x20") %><span class="bold-text-restaurant-details"> Wait-time: </span><%= @restaurant.wait_time %> min</p>
     <p>
-    <%= image_tag("star.png", :alt => "star icon", size: "20x17") %>
+    <%= image_tag("star.png", :alt => "star icon", size: "20x19") %>
     <span class="bold-text-restaurant-details"> Accuracy Rating: </span>
       <% ratings = [] %>
       <% @visits.each do |visit| %>
