@@ -7,14 +7,11 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
-
 import "controllers"
 import "bootstrap"
-
 import { initStarRating } from '../plugins/init_star_rating';
 
+Rails.start()
 initStarRating();
+Turbolinks.start()
+ActiveStorage.start()
