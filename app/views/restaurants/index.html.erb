@@ -4,7 +4,7 @@
       <div>
         <div>
           <%= form_tag restaurants_path, method: :get, data: { refresh_list_target: 'form' } do %>
-            <div class="search-form-control form-group d-flex mt-3"  style="width: 400px; margin: 0 auto;">
+            <div class="search-form-control form-group d-flex mt-3"  style="width: 350px; margin: 0 auto;">
               <%= text_field_tag :location,
                 params[:location],
                 class: "form-control color",
@@ -18,7 +18,7 @@
             </div>
             </div>
 
-            <div class="search-form-control form-group d-flex" style="width: 400px; margin: 0 auto;">
+            <div class="search-form-control form-group d-flex" style="width: 350px; margin: 0 auto;">
               <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
                 <option value="">Select</option>
                 <option value="5"> less < 5</option>
