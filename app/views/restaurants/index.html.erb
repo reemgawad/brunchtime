@@ -21,11 +21,11 @@
             <div class="search-form-control form-group d-flex" style="width: 400px; margin: 0 auto;">
               <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
                 <option value="">Select</option>
-                <option value="5"> less < 5</option>
-                <option value="10"> less < 10</option>
-                <option value="15"> less < 15</option>
-                <option value="30"> less < 30</option>
-                <option value="60">less < 60</option>
+                <option class="fs-4" value="5"> 5min or less </option>
+                <option value="10"> 10min or less </option>
+                <option value="15"> 15min or less </option>
+                <option value="30"> 30min or less </option>
+                <option value="60"> 60min or less </option>
                 <%= submit_tag "Filter", class: "brunch-button" %>
               </select>
             </div>
