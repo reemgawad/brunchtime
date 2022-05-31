@@ -15,7 +15,7 @@
             <%= image_tag src= "https://kitt.lewagon.com/placeholder/users/Plorrain", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end navbar-z-index" aria-labelledby="navbarDropdown">
               <p class="welcome-msg text-center">  Welcome <%= current_user.first_name %>!</p>
-              <%= link_to "Home", root_path, class: "dropdown-item brown-link" %>
+              <%= link_to "Home", root_path, class: "dropdown-item brown-link " %>
               <%= link_to "Restaurants", restaurants_path, class: "dropdown-item brown-link" %>
               <%= link_to "Favorites", my_favorites_path, class: "dropdown-item brown-link" %>
               <%= link_to "Brunching History", my_past_brunches_path, class: "dropdown-item brown-link" %>

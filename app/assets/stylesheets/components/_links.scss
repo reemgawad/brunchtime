@@ -1,4 +1,8 @@
-.back-to-list-button a {
+a {
+  text-decoration: none;
+}
+
+.back-to-list-button a:link {
     text-decoration: none;
     color: $hash-brown;
 }
