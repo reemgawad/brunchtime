@@ -21,6 +21,22 @@
     color: $reem-green;
     border-radius: 10px;
     margin-right: 10px;
-    // margin not working. need to find new way to center it + make review boxes smaller for dropdown
-    // + make button longer + put space between other button
+    width: 286px;
+}
+
+//override secondary button visited color
+.btn-check:checked+.btn-secondary,
+.btn-check:active+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary.active,
+.show>.btn-secondary.dropdown-toggle {
+    color: $reem-green;
+    background-color: white;
+    border-color: white;
+}
+
+.btn-secondary:hover {
+    color: $reem-green;
+    background-color: white;
+    border-color: white;
 }
