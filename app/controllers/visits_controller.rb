@@ -50,9 +50,10 @@ class VisitsController < ApplicationController
 
   def destroy
     @visit = Visit.find(params[:id])
+    @restaurant = @visit.restaurant
     @visit.destroy
 
-    redirect_to restaurants_path
+    redirect_to restaurant_path(@restaurant)
   end
 
   def arrived!

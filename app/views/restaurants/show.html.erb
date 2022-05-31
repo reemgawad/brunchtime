@@ -30,12 +30,28 @@
           </div>
           <div class="review-date col-4"><p><%= visit.date %></p></div>
             <% if visit.user == current_user %>
-              <%= link_to edit_visit_path(visit), class: 'edit-feedback-link' do %>
-              <i class="fas fa-edit"></i>
-              <% end %>
+              <div class="edit-review-buttons">
+                <div class="edit-button">
+                  <%= link_to edit_visit_path(visit) do %>
+                  <i class="fas fa-edit"></i>
+                  <% end %>
+                </div>
+
+                <div class="edit-button">
+                  <%= link_to visit_path(visit), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                </div>
+              </div>
+              <%# <p class='edit-feedback-link'><%= link_to "Delete feedback",
+                visit_path(visit),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+              <%# </p> %>
             <% end %>
+
           </div>
-          <% end %>
+        <% end %>
       <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
 
     <div class="show-page-bottom-page-links">
