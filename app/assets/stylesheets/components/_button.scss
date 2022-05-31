@@ -18,7 +18,7 @@
 // reviews button on show page
 .btn-secondary {
     background-color: $secondary;
-    color: $reem-green;
+    color: $reem-green !important;
     border-radius: 10px;
     margin-right: 10px;
     width: 286px;
@@ -28,15 +28,20 @@
 .btn-check:checked+.btn-secondary,
 .btn-check:active+.btn-secondary,
 .btn-secondary:active,
+.btn-secondary:visited,
 .btn-secondary.active,
 .show>.btn-secondary.dropdown-toggle {
-    color: $reem-green;
+    color: $reem-green !important;
     background-color: white;
     border-color: white;
 }
 
 .btn-secondary:hover {
-    color: $reem-green;
+    color: $reem-green !important;
     background-color: white;
     border-color: white;
+}
+
+.btn-secondary:active {
+    color: $reem-green !important;
 }
