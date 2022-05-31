@@ -16,7 +16,7 @@ print "Seeding users..."
 user_one = User.create!(
   {
     email: "p@p.p",
-    first_name: "Philippine",
+    first_name: "Philou",
     password: "secret"
   }
 )
@@ -40,7 +40,7 @@ user_three = User.create!(
 user_four = User.create!(
   {
     email: "g@g.g",
-    first_name: "Gwladys",
+    first_name: "Gwlad",
     password: "secret"
   }
 )
