@@ -70,12 +70,25 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.reviews-list {
+    position: absolute;
+    bottom: 55px;
+    margin: 0;
+    padding: 10px;
+    width: 120%;
+    background: white;
+    border-radius: 4px;
+    list-style: none;
+}
+
 .review-cards {
-    background-color: $egg-whites;
+    background-color: #FFFDF7;
     border-bottom: 1px solid grey;
     margin-bottom: 15px;
     height: 90px;
     position: relative;
+    width: 94%;
+    margin: 0 auto;
 }
 
 .review-date {

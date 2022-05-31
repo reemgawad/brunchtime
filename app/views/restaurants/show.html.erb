@@ -33,43 +33,49 @@
     <p><span class="bold-text-restaurant-details">Opening Hours: </span><%= @restaurant.opening_hours %></p>
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
-        <% @visits.each do |visit| %>
+    <div class="dropdown d-flex justify-content-center mb-3" data-controller="reviews">
+      <button class="btn btn-secondary" type="button" data-action="click->reviews#dropdown">
+        Reviews
+      </button>
+      <ul class="reviews-list d-none" data-reviews-target="reviewsList">
+        <li><% @visits.each do |visit| %>
           <div class="review-cards row justify-content-between align-items-top p-2">
-          <div class="col-8">
-            <div class="d-flex">
-              <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
-              <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
-            </div>
-            <div>
-              <p class="feedback"><%= visit.feedback %></p><br>
-            </div>
-          </div>
-          <div class="review-date col-4"><p><%= visit.date %></p></div>
-            <% if visit.user == current_user %>
-              <div class="edit-review-buttons">
-                <div class="edit-button">
-                  <%= link_to edit_visit_path(visit) do %>
-                  <i class="fas fa-edit"></i>
-                  <% end %>
-                </div>
-
-                <div class="edit-button">
-                  <%= link_to visit_path(visit), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="fas fa-trash-alt"></i>
-                  <% end %>
-                </div>
+            <div class="col-8">
+              <div class="d-flex">
+                <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
+                <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
               </div>
-              <%# <p class='edit-feedback-link'><%= link_to "Delete feedback",
-                visit_path(visit),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-              <%# </p> %>
-            <% end %>
+              <div>
+                <p class="feedback"><%= visit.feedback %></p><br>
+              </div>
+            </div>
+            <div class="review-date col-4"><p><%= visit.date %></p></div>
+              <% if visit.user == current_user %>
+                <div class="edit-review-buttons">
+                  <div class="edit-button">
+                    <%= link_to edit_visit_path(visit) do %>
+                    <i class="fas fa-edit"></i>
+                    <% end %>
+                  </div>
 
-          </div>
-        <% end %>
+                  <div class="edit-button">
+                    <%= link_to visit_path(visit), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <%# <p class='edit-feedback-link'><%= link_to "Delete feedback",
+                  visit_path(visit),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                <%# </p> %>
+              <% end %>
+            </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
       <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
-
     <div class="show-page-bottom-page-links">
       <div>
         <%= simple_form_for [ @restaurant, @visit ] do |f| %>
