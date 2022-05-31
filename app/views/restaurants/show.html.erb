@@ -9,7 +9,7 @@
     Accuracy Rating: </span>
       <% ratings = [] %>
       <% @visits.each do |visit| %>
-        <% ratings << visit.rating %>
+        <% ratings << visit.rating unless visit.rating.nil? %>
       <% end %>
       <%= (ratings.sum.to_f / ratings.size).round(1) %>
     </p><br>
