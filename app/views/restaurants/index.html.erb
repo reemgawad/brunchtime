@@ -1,10 +1,10 @@
 <div class="background" data-controller="see-map-or-list-button">
   <div class="d-flex flex-column justify-content-center" data-controller="refresh-list">
     <div data-see-map-or-list-button-target="list">
-      <div>
+      <div class="d-flex align-items-center justify-content-center mt-3">
         <div>
           <%= form_tag restaurants_path, method: :get, data: { refresh_list_target: 'form' } do %>
-            <div class="search-form-control form-group d-flex mt-3"  style="width: 350px; margin: 0 auto;">
+            <div class="search-form-control form-group d-flex"  style="width: 200px; margin: 0 auto;">
               <%= text_field_tag :location,
                 params[:location],
                 class: "form-control color",
@@ -18,7 +18,7 @@
             </div>
             </div>
 
-            <div class="search-form-control form-group d-flex" style="width: 350px; margin: 0 auto;">
+            <div class="search-form-control form-group" style="width: 120px;">
               <select name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
                 <option value="">Wait time</option>
                 <option class="fs-4" value="5"> 5min or less </option>
