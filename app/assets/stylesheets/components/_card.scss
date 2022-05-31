@@ -3,10 +3,11 @@
     height: 150px;
     background: #FCEFB4;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
-    margin: 15px;
+    margin: 10px;
     padding-left: 15px;
     width: 700px;
     a {
@@ -90,4 +91,3 @@
     font-size: 14px;
     margin: -2px;
 }
-

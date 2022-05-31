@@ -320,3 +320,24 @@ visit_ten = Visit.new(
 visit_ten.user = user_one
 visit_ten.restaurant = restaurant_nine
 visit_ten.save!
+
+
+# restaurant_eleven = Restaurant.new(
+#   {
+#     name: "Ginko Café & BarTEST",
+#     address: "308 RUE STE-CATHERINE EST, MONTREAL",
+#     description: "Popular brunch spot serving eclectic Canadian fare in a chic, open room with lots of natural light.",
+#     price_range: "$",
+#     opening_hours: "7am-9pm",
+#     phone_number: "514-379-4449",
+#     wait_time: 10
+
+#   }
+# )
+# restaurant_eleven.photo.attach(io: File.open('app/assets/images/ginko.jpeg'), filename: 'ginko.jpeg')
+# restaurant_eleven.save!
+
+Restaurant.all.each do |restaurant|
+  restaurant.update_avg_rating
+  restaurant.save
+end

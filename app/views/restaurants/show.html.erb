@@ -2,17 +2,14 @@
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @restaurant.photo.key, height: 500, crop: :fill if @restaurant.photo.attached? %>')">
   </div>
   <div class="container">
-    <h1><%= @restaurant.name%></h1><br>
+
+    <h1 class="mb-4"><%= @restaurant.name%></h1>
     <p><%= image_tag("clock.png", :alt => "clock icon", size: "20x20") %><span class="bold-text-restaurant-details"> Wait-time: </span><%= @restaurant.wait_time %> min</p>
-    <p>
-    <%= image_tag("star.png", :alt => "star icon", size: "20x19") %>
-    <span class="bold-text-restaurant-details"> Accuracy Rating: </span>
-      <% ratings = [] %>
-      <% @visits.each do |visit| %>
-        <% ratings << visit.rating %>
-      <% end %>
-      <%= (ratings.sum.to_f / ratings.size).round(1) %>
-    </p><br>
+    <p class ="d-flex align-items-center">
+      <%= image_tag("star.png", :alt => "star icon", size: "20x19") %>
+      <span class="bold-text-restaurant-details px-1"> Accuracy Rating: </span>
+      <%= @restaurant.avg_rating unless @restaurant.avg_rating.zero? %>
+    </p>
 
     <p><span class="bold-text-restaurant-details">Address: </span><%= @restaurant.address %></p>
     <p><span class="bold-text-restaurant-details">Description: </span><%= @restaurant.description %></p>
@@ -20,34 +17,49 @@
     <p><span class="bold-text-restaurant-details">Opening Hours: </span><%= @restaurant.opening_hours %></p>
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
-
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Reviews
       </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li class="dropdown-item"><% @visits.each do |visit| %>
-            <div class="review-cards row justify-content-between align-items-top p-2">
-              <div class="col-8">
-                <div class="d-flex">
-                  <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
-                  <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
-                </div>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li class="dropdown-item"><% @visits.each do |visit| %>
+          <div class="review-cards row justify-content-between align-items-top p-2">
+            <div class="col-8">
+              <div class="d-flex">
+                <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
+                <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
+              </div>
               <div>
                 <p class="feedback"><%= visit.feedback %></p><br>
               </div>
             </div>
             <div class="review-date col-4"><p><%= visit.date %></p></div>
               <% if visit.user == current_user %>
-                <%= link_to edit_visit_path(visit), class: 'edit-feedback-link' do %>
-                <i class="fas fa-edit"></i>
-                <% end %>
+                <div class="edit-review-buttons">
+                  <div class="edit-button">
+                    <%= link_to edit_visit_path(visit) do %>
+                    <i class="fas fa-edit"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="edit-button">
+                    <%= link_to visit_path(visit), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <%# <p class='edit-feedback-link'><%= link_to "Delete feedback",
+                  visit_path(visit),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                <%# </p> %>
               <% end %>
             </div>
-            <% end %>
-          </li>
-        </ul>
+          <% end %>
+        </li>
+      </ul>
     </div>
+      <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
     <div class="show-page-bottom-page-links">
       <div>
         <%= simple_form_for [ @restaurant, @visit ] do |f| %>

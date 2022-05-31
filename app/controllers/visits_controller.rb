@@ -25,6 +25,8 @@ class VisitsController < ApplicationController
     # @visit.user = current_user
 
     if @visit.update(visit_params)
+      @restaurant.update_avg_rating
+      @restaurant.save
       flash[:notice] = "Thank you!"
       redirect_to restaurant_path(@restaurant)
     else
@@ -48,9 +50,10 @@ class VisitsController < ApplicationController
 
   def destroy
     @visit = Visit.find(params[:id])
+    @restaurant = @visit.restaurant
     @visit.destroy
 
-    redirect_to restaurants_path
+    redirect_to restaurant_path(@restaurant)
   end
 
   def arrived!
