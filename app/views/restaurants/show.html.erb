@@ -5,6 +5,7 @@
     <h1><%= @restaurant.name%></h1><br>
     <p><span class="bold-text-restaurant-details">Wait-time: </span><%= @restaurant.wait_time %> min</p>
     <p><span class="bold-text-restaurant-details">
+
     Accuracy Rating: </span>
       <% ratings = [] %>
       <% @visits.each do |visit| %>
