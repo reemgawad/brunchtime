@@ -25,44 +25,29 @@
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Reviews
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <% @visits.each do |visit| %>
-          <div class="review-cards row justify-content-between align-items-top p-2">
-            <div class="col-8">
-              <div class="d-flex">
-                <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
-                <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li class="dropdown-item"><% @visits.each do |visit| %>
+            <div class="review-cards row justify-content-between align-items-top p-2">
+              <div class="col-8">
+                <div class="d-flex">
+                  <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
+                  <p class="my-0 py-0">Accuracy Rating: <%= visit.rating %></p>
+                </div>
+              <div>
+                <p class="feedback"><%= visit.feedback %></p><br>
               </div>
-            <div>
-              <p class="feedback"><%= visit.feedback %></p><br>
             </div>
-          </div>
-          <div class="review-date col-4"><p><%= visit.date %></p></div>
-            <% if visit.user == current_user %>
-              <%= link_to edit_visit_path(visit), class: 'edit-feedback-link' do %>
-              <i class="fas fa-edit"></i>
+            <div class="review-date col-4"><p><%= visit.date %></p></div>
+              <% if visit.user == current_user %>
+                <%= link_to edit_visit_path(visit), class: 'edit-feedback-link' do %>
+                <i class="fas fa-edit"></i>
+                <% end %>
               <% end %>
+            </div>
             <% end %>
-          </div>
-          <% end %>
+          </li>
+        </ul>
     </div>
- <%# implement below! %>
-
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-
-
-
-
-
-
-
-
-
-
-
     <div class="show-page-bottom-page-links">
       <div>
         <%= simple_form_for [ @restaurant, @visit ] do |f| %>

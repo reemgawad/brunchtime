@@ -3,19 +3,20 @@
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
 // General style
-$font-family-sans-serif : $body-font;
-$headings-font-family : $headers-font;
-$body-bg : $light-gray;
+$font-family-sans-serif: $body-font;
+$headings-font-family: $headers-font;
+$body-bg: $light-gray;
 $font-size-base: 1rem;
 // Colors
 $body-color: $gray;
-$primary : $hash-brown;
-$success : $green;
-$info : $yellow;
-$danger : $red;
-$warning : $white;
+$primary: $hash-brown;
+$success: $green;
+$info: $yellow;
+$danger: $red;
+$warning: $white;
+$secondary: $white;
 // Buttons & inputs' radius
-$border-radius : 2px;
+$border-radius: 2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 // Override other variables below!

@@ -8,22 +8,19 @@
 }
 
 .brunch-button:hover {
-  background-color: #00ab80;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 8px 16px;
-}
-
-// links
-.back-to-list-button a {
-    text-decoration: none;
-    color: $hash-brown;
-}
-
-.back-to-list-button a:hover {
-    color: #271705;
+    background-color: #00ab80;
+    color: white;
     border-radius: 5px;
     text-decoration: none;
     padding: 8px 16px;
+}
+
+// reviews button on show page
+.btn-secondary {
+    background-color: $secondary;
+    color: $reem-green;
+    border-radius: 10px;
+    margin-right: 10px;
+    // margin not working. need to find new way to center it + make review boxes smaller for dropdown
+    // + make button longer + put space between other button
 }
