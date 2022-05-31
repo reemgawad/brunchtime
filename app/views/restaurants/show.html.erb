@@ -6,12 +6,8 @@
     <p><span class="bold-text-restaurant-details">Wait-time: </span><%= @restaurant.wait_time %> min</p>
     <p><span class="bold-text-restaurant-details">
 
-    Accuracy Rating: </span>
-      <% ratings = [] %>
-      <% @visits.each do |visit| %>
-        <% ratings << visit.rating unless visit.rating.nil? %>
-      <% end %>
-      <%= (ratings.sum.to_f / ratings.size).round(1) %>
+      Accuracy Rating: </span>
+      <%= @restaurant.avg_rating %>
     </p><br>
 
     <p><span class="bold-text-restaurant-details">Address: </span><%= @restaurant.address %></p>
