@@ -14,7 +14,7 @@
                   action: "keyup->refresh-list#update",
                 } %>
               <div data-refresh-list-target="list"></div>
-              <%= submit_tag "Find", class: "brunch-button d-none" %>
+              <%= submit_tag "Find", class: "brunch-button d-none", 'aria-label': 'Find button' %>
             </div>
             </div>
 
@@ -26,7 +26,7 @@
                 <option value="15"> 15min or less </option>
                 <option value="30"> 30min or less </option>
                 <option value="60"> 60min or less </option>
-                <%= submit_tag "Filter", class: "brunch-button d-none" %>
+                <%= submit_tag "Filter", class: "brunch-button d-none", 'aria-label': 'Filter button' %>
               </select>
             </div>
           <% end %>
