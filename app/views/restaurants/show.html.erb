@@ -33,9 +33,14 @@
     <p><span class="bold-text-restaurant-details">Opening Hours: </span><%= @restaurant.opening_hours %></p>
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
-        <% @visits.each do |visit| %>
-          <% if !visit.rating.nil? %>
-            <div class="review-cards row justify-content-between align-items-top p-2">
+    <div class="dropdown d-flex justify-content-center mb-3" data-controller="reviews">
+      <button class="btn btn-secondary" type="button" data-action="click->reviews#dropdown">
+        Reviews
+      </button>
+      <ul class="reviews-list d-none" data-reviews-target="reviewsList">
+        <li><% @visits.each do |visit| %>
+        <% if !visit.rating.nil? %>
+          <div class="review-cards row justify-content-between align-items-top p-2">
             <div class="col-8">
               <div class="d-flex">
                 <p class="bold-text-restaurant-details my-0 pe-1"><%= visit.user.first_name %></p>
@@ -66,12 +71,13 @@
                   data: { confirm: "Are you sure?" } %>
                 <%# </p> %>
               <% end %>
-
             </div>
           <% end %>
         <% end %>
+        </li>
+      </ul>
+    </div>
       <%# <%= link_to 'See Reviews', _path, class: "btn btn-success" %>
-
     <div class="show-page-bottom-page-links">
       <div>
         <%= simple_form_for [ @restaurant, @visit ] do |f| %>
