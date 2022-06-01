@@ -88,7 +88,7 @@ restaurant_three = Restaurant.new(
 
   }
 )
-restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.jpeg'), filename: 'avenue.jpeg')
+restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.jpg'), filename: 'avenue.jpg')
 restaurant_three.save!
 
 restaurant_four = Restaurant.new(
