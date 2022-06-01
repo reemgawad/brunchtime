@@ -108,7 +108,7 @@ user_twelve = User.create!(
     password: "secret"
   }
 )
-
+puts "Done."
 print "Seeding restaurants..."
 
 
@@ -478,7 +478,7 @@ visit_twoe.save!
 
 # resto4
 
-visit_three = Visit.new(
+visit_threea = Visit.new(
   {
     date: Date.today - 10,
     feedback: "Waited close to 2 HOURS 🤡",
@@ -486,13 +486,37 @@ visit_three = Visit.new(
     arrived: true
   }
 )
-visit_three.user = user_two
-visit_three.restaurant = restaurant_four
-visit_three.save!
+visit_threea.user = user_two
+visit_threea.restaurant = restaurant_four
+visit_threea.save!
+
+visit_threeb = Visit.new(
+  {
+    date: Date.today - 37,
+    feedback: "Waited 20min more than expected to be seated",
+    rating: 3,
+    arrived: true
+  }
+)
+visit_threeb.user = user_five
+visit_threeb.restaurant = restaurant_four
+visit_threeb.save!
+
+visit_threec = Visit.new(
+  {
+    date: Date.today - 23,
+    feedback: "Only waited 10min ore than advertised to get a table" ,
+    rating: 4,
+    arrived: true
+  }
+)
+visit_threec.user = user_ten
+visit_threec.restaurant = restaurant_four
+visit_threec.save!
 
 # resto5
 
-visit_five = Visit.new(
+visit_fivea = Visit.new(
   {
     date: Date.today - 7,
     feedback: "Waited a little bit over an hour. As expected.",
@@ -500,13 +524,49 @@ visit_five = Visit.new(
     arrived: true
   }
 )
-visit_five.user = user_three
-visit_five.restaurant = restaurant_five
-visit_five.save!
+visit_fivea.user = user_three
+visit_fivea.restaurant = restaurant_five
+visit_fivea.save!
+
+visit_fiveb = Visit.new(
+  {
+    date: Date.today - 2,
+    feedback: "Spot on ! We even got a table faster than we thought",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_fiveb.user = user_nine
+visit_fiveb.restaurant = restaurant_five
+visit_fiveb.save!
+
+visit_fivec = Visit.new(
+  {
+    date: Date.today - 19,
+    feedback: "Actual wait time was only 10min longer than displayed",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_fivec.user = user_two
+visit_fivec.restaurant = restaurant_five
+visit_fivec.save!
+
+visit_fived = Visit.new(
+  {
+    date: Date.today - 20,
+    feedback: "Great accuracy, we got a table within the time range the app was showing ",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_fived.user = user_eleven
+visit_fived.restaurant = restaurant_five
+visit_fived.save!
 
 # resto6
 
-visit_seven = Visit.new(
+visit_sevena = Visit.new(
   {
     date: Date.today - 21,
     feedback: "Quick queue. Wait time was spot on.",
@@ -514,13 +574,49 @@ visit_seven = Visit.new(
     arrived: true
   }
 )
-visit_seven.user = user_four
-visit_seven.restaurant = restaurant_six
-visit_seven.save!
+visit_sevena.user = user_four
+visit_sevena.restaurant = restaurant_six
+visit_sevena.save!
+
+visit_sevenb = Visit.new(
+  {
+    date: Date.today - 3,
+    feedback: "Advertised wait time was actually on point ; we've waited around 30min once there to get a table (wait time on app was 20min)",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_sevenb.user = user_twelve
+visit_sevenb.restaurant = restaurant_six
+visit_sevenb.save!
+
+visit_sevenc = Visit.new(
+  {
+    date: Date.today - 37,
+    feedback: "Had to wait 20min longer than we thought to get a table :/",
+    rating: 3,
+    arrived: true
+  }
+)
+visit_sevenc.user = user_eight
+visit_sevenc.restaurant = restaurant_six
+visit_sevenc.save!
+
+visit_sevend = Visit.new(
+  {
+    date: Date.today - 23,
+    feedback: "Fairly accurate actual wait time compared to the app",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_sevend.user = user_six
+visit_sevend.restaurant = restaurant_six
+visit_sevend.save!
 
 # resto7
 
-visit_eight = Visit.new(
+visit_eighta = Visit.new(
   {
     date: Date.today - 4,
     feedback: "Waited approx 20min. Teeny bit faster than expected",
@@ -528,13 +624,37 @@ visit_eight = Visit.new(
     arrived: true
   }
 )
-visit_eight.user = user_three
-visit_eight.restaurant = restaurant_seven
-visit_eight.save!
+visit_eighta.user = user_three
+visit_eighta.restaurant = restaurant_seven
+visit_eighta.save!
+
+visit_eightb = Visit.new(
+  {
+    date: Date.today - 10,
+    feedback: "Good wait time accuracy",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_eightb.user = user_eleven
+visit_eightb.restaurant = restaurant_seven
+visit_eightb.save!
+
+visit_eightc = Visit.new(
+  {
+    date: Date.today - 27,
+    feedback: "Time accuracy was pretty good -  we've waited 35min to have a table (VS 30min)",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_eightc.user = user_five
+visit_eightc.restaurant = restaurant_seven
+visit_eightc.save!
 
 # resto8
 
-visit_nine = Visit.new(
+visit_ninea = Visit.new(
   {
     date: Date.today - 3,
     feedback: "Always 10min wait. Great service and so quick to be seated ⚡️",
@@ -542,13 +662,37 @@ visit_nine = Visit.new(
     arrived: true
   }
 )
-visit_nine.user = user_two
-visit_nine.restaurant = restaurant_eight
-visit_nine.save!
+visit_ninea.user = user_two
+visit_ninea.restaurant = restaurant_eight
+visit_ninea.save!
+
+visit_nineb = Visit.new(
+  {
+    date: Date.today - 20,
+    feedback: "Wait time accuracy was perfect ! Only 15min to get a table",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_nineb.user = user_ten
+visit_nineb.restaurant = restaurant_eight
+visit_nineb.save!
+
+visit_ninec = Visit.new(
+  {
+    date: Date.today - 40,
+    feedback: "Waited as expected in line , than got our delicious brunch!",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_ninec.user = user_eight
+visit_ninec.restaurant = restaurant_eight
+visit_ninec.save!
 
 # resto9
 
-visit_ten = Visit.new(
+visit_tena = Visit.new(
   {
     date: Date.today - 3,
     feedback: "A long wait. Sadly did wait 60min.",
@@ -556,13 +700,37 @@ visit_ten = Visit.new(
     arrived: true
   }
 )
-visit_ten.user = user_one
-visit_ten.restaurant = restaurant_nine
-visit_ten.save!
+visit_tena.user = user_one
+visit_tena.restaurant = restaurant_nine
+visit_tena.save!
+
+visit_tenb = Visit.new(
+  {
+    date: Date.today - 29,
+    feedback: "We actually had to wait an extra 20min to be seated.",
+    rating: 3,
+    arrived: true
+  }
+)
+visit_tenb.user = user_seven
+visit_tenb.restaurant = restaurant_nine
+visit_tenb.save!
+
+visit_tenc = Visit.new(
+  {
+    date: Date.today - 7,
+    feedback: "Waited 10min more than expected than got a table. So worth it to use ! ",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_tenc.user = user_six
+visit_tenc.restaurant = restaurant_nine
+visit_tenc.save!
 
 # resto10
 
-visit_six = Visit.new(
+visit_sixa = Visit.new(
   {
     date: Date.today - 11,
     feedback: "Waited exactly 15 min!",
@@ -570,9 +738,47 @@ visit_six = Visit.new(
     arrived: true
   }
 )
-visit_six.user = user_two
-visit_six.restaurant = restaurant_ten
-visit_six.save!
+visit_sixa.user = user_two
+visit_sixa.restaurant = restaurant_ten
+visit_sixa.save!
+
+visit_sixb = Visit.new(
+  {
+    date: Date.today - 7,
+    feedback: "Got our table in 20min , just as it shown on the app!",
+    rating: 5,
+    arrived: true
+  }
+)
+visit_sixb.user = user_four
+visit_sixb.restaurant = restaurant_ten
+visit_sixb.save!
+
+visit_sixc = Visit.new(
+  {
+    date: Date.today - 21,
+    feedback: "Actually had to wait an extra 20min to be seated - Always worth it though!  ",
+    rating: 3,
+    arrived: true
+  }
+)
+visit_sixc.user = user_six
+visit_sixc.restaurant = restaurant_ten
+visit_sixc.save!
+
+visit_sixd = Visit.new(
+  {
+    date: Date.today - 44,
+    feedback: "Pretty accurate - We even got our table 10min sooner than expected!",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_sixc.user = user_eight
+visit_sixc.restaurant = restaurant_ten
+visit_sixc.save!
+
+puts "Done."
 
 # restaurant_eleven = Restaurant.new(
 #   {
