@@ -19,7 +19,7 @@
             </div>
 
             <div class="search-form-control form-group form-style" style="width: 100px;">
-              <select class="text-muted focus-class" name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
+              <select class="text-muted focus-class" name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" style="border-left-width: 1px;width: 97px;height: 32px;" >
                 <option value="">Wait time</option>
                 <option class="fs-4" value="5"> Up to 5min </option>
                 <option value="10"> Up to 10min </option>
@@ -50,7 +50,7 @@
       <%= render 'list.html', restaurants: @restaurants %>
     </div>
   </div>
-    <button class="brunch-button map-and-list-button my-2 mx-auto"
+    <button class="brunch-button map-and-list-button mt-1 mb-3 mx-auto"
             data-action="click->see-map-or-list-button#show">See Map <i class="far fa-map"></i></button>
 
 </div>

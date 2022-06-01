@@ -5,7 +5,7 @@
 .form-style {
   font-size: 15px;
   height: 35px;
-  margin: 0 10px;
+  margin: 0 6px;
 }
 
 select:focus {
@@ -15,4 +15,8 @@ select:focus {
 .focus-class:focus-visible {
   border: none;
   outline: 3px solid $sunnyside-up-yellow;
+}
+
+.form-control {
+  width: 280px;
 }
