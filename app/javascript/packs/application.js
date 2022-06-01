@@ -8,10 +8,17 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "controllers"
-import "bootstrap"
+import * as bootstrap from "bootstrap"
 import { initStarRating } from '../plugins/init_star_rating';
 
 Rails.start()
 initStarRating();
 Turbolinks.start()
 ActiveStorage.start()
+
+window.addEventListener('turbolinks:load', () => {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+})
