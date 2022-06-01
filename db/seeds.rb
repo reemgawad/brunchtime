@@ -719,7 +719,7 @@ visit_tenb.save!
 visit_tenc = Visit.new(
   {
     date: Date.today - 7,
-    feedback: "Waited 10min more than expected than got a table. So worth it to use!",
+    feedback: "Waited 10min more than expected.Still worth it to use.",
     rating: 4,
     arrived: true
   }
@@ -757,7 +757,7 @@ visit_sixb.save!
 visit_sixc = Visit.new(
   {
     date: Date.today - 21,
-    feedback: "Actually had to wait an extra 10min to be seated - Always worth it though!  ",
+    feedback: "Actually had to wait an extra 10min to be seated - Always worth it though!",
     rating: 3,
     arrived: true
   }

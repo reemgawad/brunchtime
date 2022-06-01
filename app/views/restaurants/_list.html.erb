@@ -3,17 +3,18 @@
   <div class="row">
     <% restaurants.each do |restaurant| %>
       <%= link_to restaurant_path(restaurant) do %>
-        <div class=" d-flex justify-content-center">
-            <div class="card-product justify-content-between">
+        <div class="d-flex justify-content-center">
+            <div class="card-product d-flex justify-content-between">
+              <div class="d-flex justify-content-between">
+                <div class="me-2">
+                  <img src= "<%= cl_image_path (restaurant.photo.key)%>">
+                </div>
 
-              <div class="me-3">
-                <img src= "<%= cl_image_path (restaurant.photo.key)%>">
-              </div>
-
-              <div>
-                <h3 class="fs-6"><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-                <p><b>Wait-time:</b> <%= restaurant.wait_time %> min</p>
-                <p><b>Address:</b> <%= restaurant.address %></p>
+                <div>
+                  <h3 class="fs-6"><%=restaurant.name %></h3>
+                  <p><b>Wait-time:</b> <%= restaurant.wait_time %> min</p>
+                  <p><b>Address:</b> <%= restaurant.address %></p>
+                </div>
               </div>
 
               <div data-controller="toggle-favorite">
