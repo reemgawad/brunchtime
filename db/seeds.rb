@@ -757,7 +757,7 @@ visit_sixb.save!
 visit_sixc = Visit.new(
   {
     date: Date.today - 21,
-    feedback: "Actually had to wait an extra 10min to be seated - Always worth it though!  ",
+    feedback: "Actually had to wait an extra 10min to be seated - Always worth it though!",
     rating: 3,
     arrived: true
   }
