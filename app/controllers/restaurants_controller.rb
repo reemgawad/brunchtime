@@ -40,7 +40,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @visit = Visit.new
-    @visits = @restaurant.visits.where.not(arrived: false).order(created_at: :desc)
+    @visits = @restaurant.visits.where.not(arrived: false).order(date: :desc)
   end
 
   def toggle_favorite
