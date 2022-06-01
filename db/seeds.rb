@@ -295,7 +295,7 @@ visit_oneb.save!
 visit_onec = Visit.new(
   {
     date: Date.today - 11,
-    feedback: "Wait time was showing 30 min and we got a table in 35min ! awesome",
+    feedback: "Wait time was showing 30 min and we got a table in 35min ! AWESOME 😁 ",
     rating: 5,
     arrived: true
   }
@@ -344,7 +344,7 @@ visit_foura.save!
 visit_fourb = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "Got a table within expected time , thanks brunchtime!",
+    feedback: "Got a table within expected time , thanks brunchtime 🍳",
     rating: 4,
     arrived: true
   }
@@ -356,8 +356,8 @@ visit_fourb.save!
 visit_fourc = Visit.new(
   {
     date: Date.today - 10,
-    feedback: "Accuracy was pretty good; we had to wait an extra 15min - not so bad ",
-    rating: 3,
+    feedback: "Accuracy was pretty good; we had to wait an extra 5min - not too bad ",
+    rating: 4,
     arrived: true
   }
 )
@@ -380,7 +380,7 @@ visit_fourd.save!
 visit_foure = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "The accuracy was off ; we showed up hoping to wait for 45min but ended up waiting 20min extra to get a table",
+    feedback: "The accuracy was off; we showed up hoping to wait for 45min but waited 20min extra 😡",
     rating: 1,
     arrived: true
   }
@@ -404,7 +404,7 @@ visit_fourf.save!
 visit_fourg = Visit.new(
   {
     date: Date.today - 7,
-    feedback: "Fair accuracy; only xaited an extra 10min to get seated",
+    feedback: "Fair accuracy. Only waited an extra 10min.",
     rating: 4,
     arrived: true
   }
@@ -444,7 +444,7 @@ visit_twoc = Visit.new(
   {
     date: Date.today - 6,
     feedback: "Waited 1h to be seated but it was showing 40min",
-    rating: 3,
+    rating: 2,
     arrived: true
   }
 )
@@ -467,7 +467,7 @@ visit_twod.save!
 visit_twoe = Visit.new(
   {
     date: Date.today - 27,
-    feedback: "Great accuracy ! so helpfully to find the best places without bad surprises ",
+    feedback: "Great accuracy ! Very helpful to find the best places without bad long waits!",
     rating: 4,
     arrived: true
   }
@@ -505,7 +505,7 @@ visit_threeb.save!
 visit_threec = Visit.new(
   {
     date: Date.today - 23,
-    feedback: "Only waited 10min ore than advertised to get a table" ,
+    feedback: "Only waited 10min ore than advertised to get a table",
     rating: 4,
     arrived: true
   }
@@ -555,7 +555,7 @@ visit_fivec.save!
 visit_fived = Visit.new(
   {
     date: Date.today - 20,
-    feedback: "Great accuracy, we got a table within the time range the app was showing ",
+    feedback: "Great accuracy, we got a table within the time range the app was showing",
     rating: 4,
     arrived: true
   }
@@ -581,7 +581,7 @@ visit_sevena.save!
 visit_sevenb = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "Advertised wait time was actually on point ; we've waited around 30min once there to get a table (wait time on app was 20min)",
+    feedback: "Advertised wait time was actually on point; we've waited around 30min once there to get a table (wait time on app was 20min)",
     rating: 4,
     arrived: true
   }
@@ -631,7 +631,7 @@ visit_eighta.save!
 visit_eightb = Visit.new(
   {
     date: Date.today - 10,
-    feedback: "Good wait time accuracy",
+    feedback: "Good wait-time accuracy",
     rating: 5,
     arrived: true
   }
@@ -643,7 +643,7 @@ visit_eightb.save!
 visit_eightc = Visit.new(
   {
     date: Date.today - 27,
-    feedback: "Time accuracy was pretty good -  we've waited 35min to have a table (VS 30min)",
+    feedback: "Time accuracy was pretty good -  we waited 35min to have a table (VS 30min)",
     rating: 5,
     arrived: true
   }
@@ -669,7 +669,7 @@ visit_ninea.save!
 visit_nineb = Visit.new(
   {
     date: Date.today - 20,
-    feedback: "Wait time accuracy was perfect ! Only 15min to get a table",
+    feedback: "Wait time accuracy was perfect!Only 15min to get a table.",
     rating: 4,
     arrived: true
   }
@@ -681,7 +681,7 @@ visit_nineb.save!
 visit_ninec = Visit.new(
   {
     date: Date.today - 40,
-    feedback: "Waited as expected in line , than got our delicious brunch!",
+    feedback: "Waited as expected in line, than got our delicious brunch!",
     rating: 4,
     arrived: true
   }
