@@ -18,6 +18,15 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
     this.#addMarkersAndResizeMap()
+
+    window.addEventListener("load", () => {
+      window.dispatchEvent(new Event('resize'));
+      if (this.markersValue) {
+        this.#addMarkersToMap()
+        this.#fitMapToMarkers()
+      }
+    })
+
   }
 
   refreshMapAjax() {
