@@ -283,8 +283,8 @@ visit_onea.save!
 visit_oneb = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "Wait-time was a bit longer than announced. (still worth it !)",
-    rating: 3,
+    feedback: "Wait-time was a bit longer than listed but still worth it 😁",
+    rating: 4,
     arrived: true
   }
 )
@@ -307,7 +307,7 @@ visit_onec.save!
 visit_oned = Visit.new(
   {
     date: Date.today - 20,
-    feedback: "Wait time was fairly accurate !",
+    feedback: "Wait time was fairly accurate!",
     rating: 4,
     arrived: true
   }
@@ -332,7 +332,7 @@ visit_onee.save!
 visit_foura = Visit.new(
   {
     date: Date.today - 14,
-    feedback: "20min wait not 10. Was double what I expected.",
+    feedback: "20min wait not 10. Was double what I expected 🤬 ",
     rating: 1,
     arrived: true
   }
@@ -344,7 +344,7 @@ visit_foura.save!
 visit_fourb = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "Got a table within expected time , thanks brunchtime 🍳",
+    feedback: "Got a table within expected time, thanks brunchtime 🍳",
     rating: 4,
     arrived: true
   }
@@ -356,7 +356,7 @@ visit_fourb.save!
 visit_fourc = Visit.new(
   {
     date: Date.today - 10,
-    feedback: "Accuracy was pretty good; we had to wait an extra 5min - not too bad ",
+    feedback: "Accuracy was pretty good; we had to wait an extra 5min",
     rating: 4,
     arrived: true
   }
@@ -392,7 +392,7 @@ visit_foure.save!
 visit_fourf = Visit.new(
   {
     date: Date.today - 40,
-    feedback: "Great time accuracy",
+    feedback: "Great time accuracy 🤩",
     rating: 5,
     arrived: true
   }
@@ -405,7 +405,7 @@ visit_fourg = Visit.new(
   {
     date: Date.today - 7,
     feedback: "Fair accuracy. Only waited an extra 10min.",
-    rating: 4,
+    rating: 3,
     arrived: true
   }
 )
@@ -419,7 +419,7 @@ visit_fourg.save!
 visit_twoa = Visit.new(
   {
     date: Date.today - 30,
-    feedback: "Waited 10 min. Faster than expected wait-time :)",
+    feedback: "Waited 10 min. Faster than expected wait-time 🤩",
     rating: 4,
     arrived: true
   }
@@ -431,7 +431,7 @@ visit_twoa.save!
 visit_twob = Visit.new(
   {
     date: Date.today - 10,
-    feedback: "spot on !",
+    feedback: "SPOT ON 🎯",
     rating: 5,
     arrived: true
   }
@@ -443,7 +443,7 @@ visit_twob.save!
 visit_twoc = Visit.new(
   {
     date: Date.today - 6,
-    feedback: "Waited 1h to be seated but it was showing 40min",
+    feedback: "Waited 1h to be seated but it was showing 40min.",
     rating: 2,
     arrived: true
   }
@@ -467,7 +467,7 @@ visit_twod.save!
 visit_twoe = Visit.new(
   {
     date: Date.today - 27,
-    feedback: "Great accuracy ! Very helpful to find the best places without bad long waits!",
+    feedback: "Great accuracy! Very helpful to see expected wait-times!",
     rating: 4,
     arrived: true
   }
@@ -531,7 +531,7 @@ visit_fivea.save!
 visit_fiveb = Visit.new(
   {
     date: Date.today - 2,
-    feedback: "Spot on ! We even got a table faster than we thought",
+    feedback: "Great! We even got a table faster than we thought 😊",
     rating: 5,
     arrived: true
   }
@@ -569,7 +569,7 @@ visit_fived.save!
 visit_sevena = Visit.new(
   {
     date: Date.today - 21,
-    feedback: "Quick queue. Wait time was spot on.",
+    feedback: "Quick queue. Wait time was on point!",
     rating: 5,
     arrived: true
   }
@@ -581,7 +581,7 @@ visit_sevena.save!
 visit_sevenb = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "Advertised wait time was actually on point; we've waited around 30min once there to get a table (wait time on app was 20min)",
+    feedback: "Advertised wait time was actually on point; we waited around 30min",
     rating: 4,
     arrived: true
   }
@@ -593,7 +593,7 @@ visit_sevenb.save!
 visit_sevenc = Visit.new(
   {
     date: Date.today - 37,
-    feedback: "Had to wait 20min longer than we thought to get a table :/",
+    feedback: "Had to wait 15min longer than we thought to get a table 😕 ",
     rating: 3,
     arrived: true
   }
@@ -605,7 +605,7 @@ visit_sevenc.save!
 visit_sevend = Visit.new(
   {
     date: Date.today - 23,
-    feedback: "Fairly accurate actual wait time compared to the app",
+    feedback: "Fairly accurate wait time give or take 5 minutes",
     rating: 4,
     arrived: true
   }
@@ -619,7 +619,7 @@ visit_sevend.save!
 visit_eighta = Visit.new(
   {
     date: Date.today - 4,
-    feedback: "Waited approx 20min. Teeny bit faster than expected",
+    feedback: "Waited approx 20min. Teeny bit faster than expected ",
     rating: 4,
     arrived: true
   }
@@ -643,7 +643,7 @@ visit_eightb.save!
 visit_eightc = Visit.new(
   {
     date: Date.today - 27,
-    feedback: "Time accuracy was pretty good -  we waited 35min to have a table (VS 30min)",
+    feedback: "Time accuracy was pretty good. We waited 35min instead of 30",
     rating: 5,
     arrived: true
   }
@@ -669,7 +669,7 @@ visit_ninea.save!
 visit_nineb = Visit.new(
   {
     date: Date.today - 20,
-    feedback: "Wait time accuracy was perfect!Only 15min to get a table.",
+    feedback: "Wait time accuracy was good! Only 15min to get a table.",
     rating: 4,
     arrived: true
   }
@@ -681,7 +681,7 @@ visit_nineb.save!
 visit_ninec = Visit.new(
   {
     date: Date.today - 40,
-    feedback: "Waited as expected in line, than got our delicious brunch!",
+    feedback: "Waited as expected, than got our delicious brunch!",
     rating: 4,
     arrived: true
   }
@@ -707,7 +707,7 @@ visit_tena.save!
 visit_tenb = Visit.new(
   {
     date: Date.today - 29,
-    feedback: "We actually had to wait an extra 20min to be seated.",
+    feedback: "We actually had to wait an extra 10min to be seated.",
     rating: 3,
     arrived: true
   }
@@ -719,7 +719,7 @@ visit_tenb.save!
 visit_tenc = Visit.new(
   {
     date: Date.today - 7,
-    feedback: "Waited 10min more than expected than got a table. So worth it to use ! ",
+    feedback: "Waited 10min more than expected than got a table. So worth it to use!",
     rating: 4,
     arrived: true
   }
@@ -745,7 +745,7 @@ visit_sixa.save!
 visit_sixb = Visit.new(
   {
     date: Date.today - 7,
-    feedback: "Got our table in 20min , just as it shown on the app!",
+    feedback: "Got our table in 20min, just as shown on the app!",
     rating: 5,
     arrived: true
   }
@@ -757,7 +757,7 @@ visit_sixb.save!
 visit_sixc = Visit.new(
   {
     date: Date.today - 21,
-    feedback: "Actually had to wait an extra 20min to be seated - Always worth it though!  ",
+    feedback: "Actually had to wait an extra 10min to be seated - Always worth it though!  ",
     rating: 3,
     arrived: true
   }
@@ -769,14 +769,14 @@ visit_sixc.save!
 visit_sixd = Visit.new(
   {
     date: Date.today - 44,
-    feedback: "Pretty accurate - We even got our table 10min sooner than expected!",
+    feedback: "Pretty accurate - we even got our table 10min sooner than expected!",
     rating: 4,
     arrived: true
   }
 )
-visit_sixc.user = user_eight
-visit_sixc.restaurant = restaurant_ten
-visit_sixc.save!
+visit_sixd.user = user_eight
+visit_sixd.restaurant = restaurant_ten
+visit_sixd.save!
 
 puts "Done."
 
