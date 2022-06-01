@@ -3,9 +3,10 @@
 }
 
 .form-style {
-  font-size: 15px;
+  font-size: 14px;
+  color:#58370E;
   height: 35px;
-  margin: 0 10px;
+  margin: 0 6px;
 }
 
 select:focus {
@@ -15,4 +16,15 @@ select:focus {
 .focus-class:focus-visible {
   border: none;
   outline: 3px solid $sunnyside-up-yellow;
+}
+
+.form-control {
+  width: 280px;
+  border-radius: 5px;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #58370E !important;
+  border-radius: 5px;
 }

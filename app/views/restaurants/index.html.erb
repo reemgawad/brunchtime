@@ -1,13 +1,14 @@
 <div class="background" data-controller="see-map-or-list-button">
   <div class="d-flex flex-column justify-content-center" data-controller="refresh-list">
     <div data-see-map-or-list-button-target="list">
-      <div class="d-flex justify-content-center align-items-baseline mt-4">
+      <div class="container d-flex justify-content-center align-items-baseline mt-4">
         <div>
           <%= form_tag restaurants_path, method: :get, data: { refresh_list_target: 'form' } do %>
-            <div class="search-form-control form-group d-flex"  style="width: 220px">
+            <div class="search-form-control form-group d-flex">
               <%= text_field_tag :location,
                 params[:location],
                 class: "form-control color form-style",
+                style: "width: 206px;margin-left: 8px;",
                 placeholder: "Search locations...",
                 data: {
                   refresh_list_target: 'searchInput',
@@ -19,7 +20,7 @@
             </div>
 
             <div class="search-form-control form-group form-style" style="width: 100px;">
-              <select class="text-muted focus-class" name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" >
+              <select class="text-muted focus-class" name=wait_time data-refresh-list-target="time" data-action="change->refresh-list#update" style="border-left-width: 1px;width: 97px;height: 34px;" >
                 <option value="">Wait time</option>
                 <option class="fs-4" value="5"> Up to 5min </option>
                 <option value="10"> Up to 10min </option>
@@ -50,7 +51,7 @@
       <%= render 'list.html', restaurants: @restaurants %>
     </div>
   </div>
-    <button class="brunch-button map-and-list-button my-2 mx-auto"
+    <button class="brunch-button map-and-list-button mt-1 mb-3 mx-auto"
             data-action="click->see-map-or-list-button#show">See Map <i class="far fa-map"></i></button>
 
 </div>
