@@ -25,8 +25,8 @@ export default class extends Controller {
       customMarker.className = "marker"
       customMarker.style.backgroundImage = `url('${this.markerValue.image_url}')`
       customMarker.style.backgroundSize = "contain"
-      customMarker.style.width = "25px"
-      customMarker.style.height = "25px"
+      customMarker.style.width = "40px"
+      customMarker.style.height = "40px"
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
@@ -80,8 +80,8 @@ export default class extends Controller {
           'line-cap': 'round'
         },
         paint: {
-          'line-color': '#3887be',
-          'line-width': 5,
+          'line-color': '#58370E',
+          'line-width': 3,
           'line-opacity': 0.75
         }
       });
@@ -108,8 +108,8 @@ export default class extends Controller {
           }
         },
         paint: {
-          'circle-radius': 10,
-          'circle-color': '#3887be'
+          'circle-radius': 7,
+          'circle-color': '#58370E'
         }
       });
 
