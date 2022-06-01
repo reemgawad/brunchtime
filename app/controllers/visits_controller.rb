@@ -53,6 +53,8 @@ class VisitsController < ApplicationController
     @restaurant = @visit.restaurant
     @visit.rating = nil
     @visit.save
+    @restaurant.update_avg_rating
+    @restaurant.save
 
     redirect_to restaurant_path(@restaurant)
   end
