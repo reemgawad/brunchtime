@@ -159,17 +159,17 @@ restaurant_three.save!
 
 restaurant_four = Restaurant.new(
   {
-    name: "Arthurs Nosh Bar",
-    address: "4621 RUE NOTRE-DAME OUEST, MONTREAL",
-    description: "Traditional Jewish deli serving breakfast & sandwiches in a bright, stylish space.",
+    name: "Beauty's Restaurant",
+    address: "93 Mont-Royal AVE W, MONTREAL",
+    description: "Generous breakfast/brunch dishes, plus Montréal bagels, lox & smoothies, served in retro 1942 space.",
     price_range: "$$",
-    opening_hours: "9am-5pm",
-    phone_number: "514-757-5190",
+    opening_hours: "8am-3:30pm",
+    phone_number: "514-849-8883",
     wait_time: 30
 
   }
 )
-restaurant_four.photo.attach(io: File.open('app/assets/images/arthurs.jpeg'), filename: 'arthurs.jpeg')
+restaurant_four.photo.attach(io: File.open('app/assets/images/beautys.jpeg'), filename: 'beautys.jpeg')
 restaurant_four.save!
 
 restaurant_five = Restaurant.new(
