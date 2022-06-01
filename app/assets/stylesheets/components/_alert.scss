@@ -1,12 +1,11 @@
 .alert {
   position: fixed;
-  z-index: 1000;
-  padding: 60px;
+  z-index: 1;
+  padding: 50px;
   top: 50vh;
-  right: 82px;
+  width: 300px;
   border-radius: 5px;
   background-color: $sunnyside-up-yellow;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  // bottom: 16px;
-  // right: 16px;
+  text-align: center;
 }
