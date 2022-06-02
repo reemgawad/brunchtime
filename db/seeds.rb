@@ -124,7 +124,7 @@ restaurant_one = Restaurant.new(
     wait_time: 15
   }
 )
-restaurant_one.photo.attach(io: File.open('app/assets/images/barley.jpeg'), filename: 'barley.jpeg')
+restaurant_one.photo.attach(io: File.open('app/assets/images/barley.webp'), filename: 'barley.webp')
 restaurant_one.save!
 
 restaurant_two = Restaurant.new(
@@ -139,7 +139,7 @@ restaurant_two = Restaurant.new(
 
   }
 )
-restaurant_two.photo.attach(io: File.open('app/assets/images/neuf.jpeg'), filename: 'neuf.jpeg')
+restaurant_two.photo.attach(io: File.open('app/assets/images/neuf.webp'), filename: 'neuf.webp')
 restaurant_two.save!
 
 restaurant_three = Restaurant.new(
@@ -154,7 +154,7 @@ restaurant_three = Restaurant.new(
 
   }
 )
-restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.jpg'), filename: 'avenue.jpg')
+restaurant_three.photo.attach(io: File.open('app/assets/images/avenue.webp'), filename: 'avenue.webp')
 restaurant_three.save!
 
 restaurant_four = Restaurant.new(
@@ -169,7 +169,7 @@ restaurant_four = Restaurant.new(
 
   }
 )
-restaurant_four.photo.attach(io: File.open('app/assets/images/beautys.jpeg'), filename: 'beautys.jpeg')
+restaurant_four.photo.attach(io: File.open('app/assets/images/beautys.webp'), filename: 'beautys.webp')
 restaurant_four.save!
 
 restaurant_five = Restaurant.new(
@@ -184,7 +184,7 @@ restaurant_five = Restaurant.new(
 
   }
 )
-restaurant_five.photo.attach(io: File.open('app/assets/images/foiegwa.jpeg'), filename: 'foiegwa.jpeg')
+restaurant_five.photo.attach(io: File.open('app/assets/images/foiegwa.webp'), filename: 'foiegwa.webp')
 restaurant_five.save!
 
 restaurant_six = Restaurant.new(
@@ -199,7 +199,7 @@ restaurant_six = Restaurant.new(
 
   }
 )
-restaurant_six.photo.attach(io: File.open('app/assets/images/maman.png'), filename: 'maman.png')
+restaurant_six.photo.attach(io: File.open('app/assets/images/maman.webp'), filename: 'maman.webp')
 restaurant_six.save!
 
 restaurant_seven = Restaurant.new(
@@ -214,7 +214,7 @@ restaurant_seven = Restaurant.new(
 
   }
 )
-restaurant_seven.photo.attach(io: File.open('app/assets/images/passe.jpeg'), filename: 'passe.jpeg')
+restaurant_seven.photo.attach(io: File.open('app/assets/images/passe.webp'), filename: 'passe.webp')
 restaurant_seven.save!
 
 restaurant_eight = Restaurant.new(
@@ -229,7 +229,7 @@ restaurant_eight = Restaurant.new(
 
   }
 )
-restaurant_eight.photo.attach(io: File.open('app/assets/images/ginko.jpeg'), filename: 'ginko.jpeg')
+restaurant_eight.photo.attach(io: File.open('app/assets/images/ginko.webp'), filename: 'ginko.webp')
 restaurant_eight.save!
 
 restaurant_nine = Restaurant.new(
@@ -244,7 +244,7 @@ restaurant_nine = Restaurant.new(
 
   }
 )
-restaurant_nine.photo.attach(io: File.open('app/assets/images/dandy.jpeg'), filename: 'dandy.jpeg')
+restaurant_nine.photo.attach(io: File.open('app/assets/images/dandy.webp'), filename: 'dandy.webp')
 restaurant_nine.save!
 
 restaurant_ten = Restaurant.new(
@@ -259,7 +259,7 @@ restaurant_ten = Restaurant.new(
 
   }
 )
-restaurant_ten.photo.attach(io: File.open('app/assets/images/tommy.jpeg'), filename: 'tommy.jpeg')
+restaurant_ten.photo.attach(io: File.open('app/assets/images/tommy.webp'), filename: 'tommy.webp')
 restaurant_ten.save!
 
 puts "Done."
