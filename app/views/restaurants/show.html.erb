@@ -23,8 +23,8 @@
     <p><%= image_tag("clock.png", :alt => "clock icon", size: "20x20") %><span class="bold-text-restaurant-details"> Wait-time: </span><%= @restaurant.wait_time %> min</p>
     <p class ="d-flex align-items-center">
       <%= image_tag("star.png", :alt => "star icon", size: "20x19") %>
-      <span class="bold-text-restaurant-details px-1"> Accuracy Rating: </span>
-      <%= @restaurant.avg_rating unless @restaurant.avg_rating.zero? %>
+      <span class="bold-text-restaurant-details px-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Users' average rating of the displayed wait-time"> Accuracy Rating: </span>
+      <%= @restaurant.avg_rating unless @restaurant.avg_rating.zero?%> / 5
     </p>
 
     <p><span class="bold-text-restaurant-details">Address: </span><%= @restaurant.address %></p>
