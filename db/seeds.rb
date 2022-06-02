@@ -15,16 +15,16 @@ print "Seeding users..."
 # users
 user_one = User.create!(
   {
-    email: "p@p.p",
-    first_name: "Philou",
+    email: "l@l.l",
+    first_name: "Lien",
     password: "secret"
   }
 )
 
 user_two = User.create!(
   {
-    email: "l@l.l",
-    first_name: "Lien",
+    email: "p@p.p",
+    first_name: "Philou",
     password: "secret"
   }
 )
@@ -272,7 +272,7 @@ visit_onea = Visit.new(
   {
     date: Date.today - 5,
     feedback: "Waited 12 min. Wait-time close to accurate.",
-    rating: 4,
+    rating: 3,
     arrived: true
   }
 )
@@ -283,8 +283,8 @@ visit_onea.save!
 visit_oneb = Visit.new(
   {
     date: Date.today - 3,
-    feedback: "Wait-time was a bit longer than listed but still worth it 😁",
-    rating: 4,
+    feedback: "Wait-time was a lot longer than listed :( ",
+    rating: 2,
     arrived: true
   }
 )
@@ -295,8 +295,8 @@ visit_oneb.save!
 visit_onec = Visit.new(
   {
     date: Date.today - 11,
-    feedback: "Wait time was showing 30 min and we got a table in 35min ! AWESOME 😁",
-    rating: 5,
+    feedback: "We had to wait more than expected to finally be seated",
+    rating: 3,
     arrived: true
   }
 )
@@ -307,8 +307,8 @@ visit_onec.save!
 visit_oned = Visit.new(
   {
     date: Date.today - 20,
-    feedback: "Wait time was fairly accurate!",
-    rating: 4,
+    feedback: "Not that good...",
+    rating: 2,
     arrived: true
   }
 )
@@ -320,7 +320,7 @@ visit_onee = Visit.new(
   {
     date: Date.today - 36,
     feedback: "We unfortunately had to wait 20min longer than expected to get a table!",
-    rating: 2,
+    rating: 1,
     arrived: true
   }
 )
@@ -413,6 +413,18 @@ visit_fourg.user = user_seven
 visit_fourg.restaurant = restaurant_two
 visit_fourg.save!
 
+visit_fourh = Visit.new(
+  {
+    date: Date.today - 34,
+    feedback: "Not that bad , but took a bit longer than expected.",
+    rating: 3,
+    arrived: true
+  }
+)
+visit_fourh.user = user_two
+visit_fourh.restaurant = restaurant_two
+visit_fourh.save!
+
 
 # resto3
 
@@ -480,7 +492,7 @@ visit_twoe.save!
 
 visit_threea = Visit.new(
   {
-    date: Date.today - 10,
+    date: Date.today - 5,
     feedback: "Waited close to 2 HOURS 🤡",
     rating: 1,
     arrived: true
@@ -652,6 +664,19 @@ visit_eightc.user = user_five
 visit_eightc.restaurant = restaurant_seven
 visit_eightc.save!
 
+visit_eightd = Visit.new(
+  {
+    date: Date.today - 57,
+    feedback: "Time accuracy was pretty good. We waited 35min instead of 30",
+    rating: 4.5,
+    arrived: true
+  }
+)
+visit_eightd.user = user_two
+visit_eightd.restaurant = restaurant_seven
+visit_eightd.save!
+
+
 # resto8
 
 visit_ninea = Visit.new(
@@ -777,6 +802,18 @@ visit_sixd = Visit.new(
 visit_sixd.user = user_eight
 visit_sixd.restaurant = restaurant_ten
 visit_sixd.save!
+
+visit_sixe = Visit.new(
+  {
+    date: Date.today - 40,
+    feedback: "Pretty accurate wait time, only had to wait 10min more than we thought",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_sixe.user = user_two
+visit_sixe.restaurant = restaurant_ten
+visit_sixe.save!
 
 puts "Done."
 
