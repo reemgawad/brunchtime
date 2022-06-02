@@ -34,9 +34,10 @@
     <p><span class="bold-text-restaurant-details">Phone Number: </span><%= @restaurant.phone_number %></p>
 
     <div class="dropdown d-flex justify-content-center mb-3" data-controller="reviews">
-      <button class="btn btn-secondary" type="button" data-action="click->reviews#dropdown">
-        <span data-reviews-target="hideList"
-              data-action="click->reviews#show">See Reviews</span>
+      <button class="btn btn-secondary" type="button" data-action="click->reviews#dropdown"
+              data-reviews-target="hideList"
+              data-action="click->reviews#dropdown">
+        <span>See Reviews</span>
         <%# <i class="fas fa-chevron-down"></i> %>
       </button>
       <ul class="reviews-list d-none" data-reviews-target="reviewsList">
