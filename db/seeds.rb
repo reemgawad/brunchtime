@@ -493,8 +493,8 @@ visit_twoe.save!
 visit_threea = Visit.new(
   {
     date: Date.today - 5,
-    feedback: "Waited close to 2 HOURS 🤡",
-    rating: 1,
+    feedback: "Good accuracy ! and delicious !!",
+    rating: 4,
     arrived: true
   }
 )
