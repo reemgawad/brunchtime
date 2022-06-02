@@ -13,7 +13,6 @@
             <h3 class="fs-6"><%= link_to visit.restaurant.name, restaurant_path(visit.restaurant) %></h3>
             <p style="font-style: italic; font-size: 12px;">On <%= visit.date.strftime("%A %b %d") %></p>
             <p style="font-size: 12px;"><b>Wait-time:</b><%= visit.restaurant.wait_time %> min</p>
-
           </div>
 
           <div class="p-2 align-items-center">
