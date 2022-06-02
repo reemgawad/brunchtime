@@ -18,6 +18,13 @@ select:focus {
   outline: 3px solid $sunnyside-up-yellow;
 }
 
+.focus-class:focus {
+  border: none;
+  outline: 3px solid $sunnyside-up-yellow;
+  box-shadow: none;
+  background-color: white;
+}
+
 .form-control {
   width: 280px;
   border-radius: 5px;
@@ -25,6 +32,7 @@ select:focus {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #58370E !important;
+  // color: #58370E !important;
   border-radius: 5px;
+  border: 1px solid #ced4da;
 }
