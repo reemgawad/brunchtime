@@ -9,6 +9,6 @@ export default class extends Controller {
         // console.log(this.noButtonTarget)
         setTimeout(() => {
             this.myModalTarget.click()
-        }, 10000)
+        }, 7000)
     }
 }
