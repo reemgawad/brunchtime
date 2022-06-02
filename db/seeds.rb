@@ -413,6 +413,18 @@ visit_fourg.user = user_seven
 visit_fourg.restaurant = restaurant_two
 visit_fourg.save!
 
+visit_fourh = Visit.new(
+  {
+    date: Date.today - 34,
+    feedback: "Not that bad , but took a bit longer than expected.",
+    rating: 3,
+    arrived: true
+  }
+)
+visit_fourh.user = user_two
+visit_fourh.restaurant = restaurant_two
+visit_fourh.save!
+
 
 # resto3
 
@@ -652,6 +664,19 @@ visit_eightc.user = user_five
 visit_eightc.restaurant = restaurant_seven
 visit_eightc.save!
 
+visit_eightd = Visit.new(
+  {
+    date: Date.today - 57,
+    feedback: "Time accuracy was pretty good. We waited 35min instead of 30",
+    rating: 4.5,
+    arrived: true
+  }
+)
+visit_eightd.user = user_two
+visit_eightd.restaurant = restaurant_seven
+visit_eightd.save!
+
+
 # resto8
 
 visit_ninea = Visit.new(
@@ -777,6 +802,18 @@ visit_sixd = Visit.new(
 visit_sixd.user = user_eight
 visit_sixd.restaurant = restaurant_ten
 visit_sixd.save!
+
+visit_sixe = Visit.new(
+  {
+    date: Date.today - 40,
+    feedback: "Pretty accurate wait time, only had to wait 10min more than we thought",
+    rating: 4,
+    arrived: true
+  }
+)
+visit_sixe.user = user_two
+visit_sixe.restaurant = restaurant_ten
+visit_sixe.save!
 
 puts "Done."
 
