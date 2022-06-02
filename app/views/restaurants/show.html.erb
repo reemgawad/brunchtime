@@ -35,7 +35,8 @@
 
     <div class="dropdown d-flex justify-content-center mb-3" data-controller="reviews">
       <button class="btn btn-secondary" type="button" data-action="click->reviews#dropdown">
-        <span>Reviews</span>
+        <span data-reviews-target="hideList"
+              data-action="click->reviews#show">See Reviews</span>
         <%# <i class="fas fa-chevron-down"></i> %>
       </button>
       <ul class="reviews-list d-none" data-reviews-target="reviewsList">
@@ -55,7 +56,7 @@
                 <p class="feedback"><%= visit.feedback %></p><br>
               </div>
             </div>
-            <div class="review-date col-4"><p><%= visit.date %></p></div>
+            <div class="review-date col-4"><p style="font-size: 11px"><%= visit.date.strftime("%A %b %d") %></p></div>
               <% if visit.user == current_user %>
                 <div class="edit-review-buttons">
                   <div class="edit-button">
