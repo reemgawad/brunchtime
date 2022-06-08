@@ -28,3 +28,18 @@ p {
     background-position-x: 102%;
   }
 }
+
+
+.logo-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 750px) {
+  .logo-title-container {
+      display: flex;
+      justify-content: start;
+      padding-left: 50px;
+      padding-top: 50px;
+    }
+}
