@@ -15,10 +15,16 @@ p {
   position: relative;
   height: 500px;
   background-image: url('/assets/bkgd_egg-1f31281a2b0b10f0cf6d54917921489ccfd55bc84bdfe3e323d2a6bae2dce1ba.png');
-  background-size: 70%;
+  background-size: 300px;
   background-repeat: no-repeat;
   background-position-x: 120%;
   background-position-y: 92%;
   background-attachment: fixed;
   overflow: visible;
+}
+
+@media (min-width: 430px) {
+  .egg-container {
+    background-position-x: 102%;
+  }
 }
