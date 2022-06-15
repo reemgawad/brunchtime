@@ -61,11 +61,13 @@
         <%= render 'list.html', restaurants: @restaurants %>
       </div>
   </div>
-    <button class="brunch-button map-and-list-button mt-1 mb-3 mx-auto" style="width: 92vw;
-    z-index: 400;
-    bottom: 64px;
-    left: 150px;
-    position: fixed;"
+  <div class="d-flex justify-content-center">
+    <button class="brunch-button map-and-list-button mt-1 mb-3 mx-auto"
+            style="width: 92vw;
+                  z-index: 400;
+                  bottom: 64px;
+                  position: fixed;"
             data-action="click->see-map-or-list-button#show">See Map <i class="far fa-map"></i></button>
+  </div>
 
 </div>
