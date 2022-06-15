@@ -2,7 +2,7 @@
   <div class="d-flex flex-column justify-content-center" data-controller="refresh-list">
     <div data-see-map-or-list-button-target="list" style='z-index: 200;
     overflow-y: scroll;
-    height: 86vh;
+    height: 87vh;
     top: 72px;
     background: rgb(253, 248, 225);
     width: 100vw;
@@ -46,10 +46,10 @@
 
     <div id="map" style="width: 92vw;
     z-index: 100;
-    top: 56px;
-    left: 16px;" class ="mx-auto my-3 position-fixed" data-see-map-or-list-button-target="map">
+    top: 56px;" class="mx-auto d-flex justify-content-center map-height-resp" data-see-map-or-list-button-target="map">
 
       <div style="width: 100%; height: 600px;"
+        class="map-height-resp"
         data-controller="mapbox"
         data-mapbox-markers-value="<%= @markers.to_json %>"
         data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
