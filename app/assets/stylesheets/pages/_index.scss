@@ -4,6 +4,9 @@
 @import "favorites";
 @import "visit_edit";
 
+
+$index-map-height: calc(100vh - 144px);
+
 .background {
   background-color: $runny-egg-yellow;
 }
@@ -16,3 +19,9 @@ h2 {
   color: $hash-brown
 }
 
+
+@media (min-width: 100px) {
+  .map-height-resp {
+    height: $index-map-height !important;
+  }
+}
