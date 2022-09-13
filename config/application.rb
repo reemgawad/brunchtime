@@ -1,7 +1,6 @@
 require_relative "boot"
 
 require "rails/all"
-config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,6 +15,7 @@ module Brunchtime
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
 
     # Configuration for the application, engines, and railties goes here.
     #
